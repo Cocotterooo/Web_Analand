@@ -1,44 +1,44 @@
-"""Welcome to Reflex! This file outlines the steps to create a basic app."""
 from rxconfig import config
-
 import reflex as rx
 
-docs_url = "https://reflex.dev/docs/getting-started/introduction"
-filename = f"{config.app_name}/{config.app_name}.py"
+from Web_Analand.styles import styles
+
+from Web_Analand.views.news_box import news_box
+from Web_Analand.views.top_navbar import top_navbar
+from Web_Analand.views.side_navbar import side_navbar
 
 
 class State(rx.State):
-    """The app state."""
-
     pass
 
 
 def index() -> rx.Component:
-    return rx.fragment(
-        rx.color_mode_button(rx.color_mode_icon(), float="right"),
-        rx.vstack(
-            rx.heading("Welcome to Reflex!", font_size="2em"),
-            rx.box("Get started by editing ", rx.code(filename, font_size="1em")),
-            rx.link(
-                "Check out our docs!",
-                href=docs_url,
-                border="0.1em solid",
-                padding="0.5em",
-                border_radius="0.5em",
-                _hover={
-                    "color": rx.color_mode_cond(
-                        light="rgb(107,99,246)",
-                        dark="rgb(179, 175, 255)",
-                    )
-                },
+    return rx.box(
+        rx.flex(
+            side_navbar(),
+            rx.stack(
+                top_navbar(),
+                news_box(),
+                direction="column",
+                width="100%"
             ),
-            spacing="1.5em",
-            font_size="2em",
-            padding_top="10%",
+            direction="row",
+            height= "100%"
         ),
+        style={
+            # linear-gradient(0deg, rgba(243, 234, 255) 0%, rgba(255, 222, 139) 68%, rgba(255, 209, 93) 100%
+            "background_image": "linear-gradient(0deg, rgba(243, 234, 255) 0%, rgba(159, 122, 214) 68%, rgba(106, 57, 176) 100%)",
+            "background_size": "cover",
+            "background_repeat": "no-repeat",
+            "background_attachment": "fixed",
+            "background_position": "bottom",
+            "width": "100vw",
+            "height": "100vh"
+        }
     )
 
-
-# Create app instance and add index page.
-app = rx.App()
+app = rx.App(
+    stylesheets=styles.STYLESHEETS,
+    style=styles.BASE_STYLE
+)
 app.add_page(index)
