@@ -10,6 +10,8 @@ from Web_Analand.views.navbar import top_navbar
 from Web_Analand.views.header_index import header_index
 from Web_Analand.views.focus_info import focus_info
 
+class State(rx.State):
+    pass
 
 def index():
     return rx.vstack(
