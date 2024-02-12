@@ -2,7 +2,6 @@
 
 
 import { Fragment, useCallback, useContext } from "react"
-import { Fragment_fd0e7cb8f9fb4669a6805377d925fba0 } from "/utils/stateful_components"
 import { Badge, Box, Button, Flex, Heading, HStack, Image as ChakraImage, Link, Spacer, Text, VStack } from "@chakra-ui/react"
 import { ScrollArea as RadixThemesScrollArea } from "@radix-ui/themes"
 import NextLink from "next/link"
@@ -73,7 +72,6 @@ export default function Component() {
 
   return (
     <Fragment>
-  <Fragment_fd0e7cb8f9fb4669a6805377d925fba0/>
   <VStack>
   <Flex>
   <RadixThemesScrollArea css={{"height": "100vh", "backgroundColor": "#1A1A1A"}} scrollbars={`vertical`} type={`hover`}>

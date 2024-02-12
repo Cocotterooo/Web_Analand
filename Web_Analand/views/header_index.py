@@ -24,7 +24,7 @@ def header_index() -> rx.component:
             font_weight="400"
         ),
         rx.span(
-            "TU DIVERSIÓN ES NUESTRA PASIÓN EN CADA DETALLE",
+            "TU DIVERSIÓN, ES NUESTRA PASIÓN EN CADA DETALLE",
             text_align="center",
             margin_top=Size.BIG.value,
             letter_spacing="0.1em",

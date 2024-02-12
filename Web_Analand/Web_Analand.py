@@ -1,4 +1,5 @@
 import reflex as rx
+import reflex.components.radix.themes as rdxt
 
 from Web_Analand.styles import styles
 from Web_Analand.styles.colors import Color, TextColor
@@ -8,14 +9,6 @@ from Web_Analand.styles.fonts import Font, FontWeight
 from Web_Analand.views.navbar import top_navbar
 from Web_Analand.views.header_index import header_index
 from Web_Analand.views.focus_info import focus_info
-
-
-import reflex.components.radix.themes as rdxt
-
-class State(rx.State):
-    """The app state."""
-
-    pass
 
 
 def index():
