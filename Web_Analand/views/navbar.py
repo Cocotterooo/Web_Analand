@@ -36,6 +36,7 @@ def top_navbar(background_color:str=Color.SECONDARY.value) -> rx.Component:
             ),
             spacing= Size.BIG.value
         ),
+        border_top= f"1px solid {Color.ACCENT.value}",
         bg=background_color,
         position="sticky",
         padding_right=Size.BIG.value,

@@ -1,15 +1,16 @@
 import reflex as rx
+import reflex.components.radix.themes as rdxt
 
 from Web_Analand.styles.styles import Size 
 from Web_Analand.styles.colors import Color, TextColor
 from Web_Analand.styles.fonts import FontWeight
 
-def server_state()->rx.Component:
-    return rx.button( 
+def discord_card()->rx.Component:
+    return rx.link( 
         rx.vstack(
             rx.hstack(
-                rx.lucide.icon(
-                    "server",
+                rdxt.icon(
+                    tag="discord_logo",
                     style={
                         "width": Size.LARGE.value, 
                         "height": Size.LARGE.value
@@ -17,7 +18,7 @@ def server_state()->rx.Component:
                     color=Color.TERCIARY.value
                 ),
                 rx.text(
-                    "analand.net", 
+                    "Nuestro Discord", 
                     font_size=Size.DEFAULT.value, 
                     color=TextColor.PRIMARY.value
                 ),
@@ -26,38 +27,17 @@ def server_state()->rx.Component:
             ),
             rx.hstack(
                 rx.lucide.icon(
-                    "power",
-                    color=TextColor.SECONDARY.value
-                ),
-                rx.span(
-                    "Estado:",
-                    color=TextColor.SECONDARY.value,
-                    font_weight= FontWeight.LIGHT_EXTRA.value
-                ),
-                #rx.badge(
-                #    "Conectado", variant="solid", color_scheme="green"
-                #),
-                rx.badge(
-                    "Desconectado", variant="solid", color_scheme="red"
-                ),
-                #rx.badge(
-                #    "Encendiendo...", variant="solid", color_scheme="yellow"
-                #),
-                padding_left=Size.DEFAULT.value
-            ),
-            rx.hstack(
-                rx.lucide.icon(
                     "user-round",
                     color=TextColor.SECONDARY.value
                 ),
                 rx.span(
-                    "Jugadores:",
+                    "Usuarios:",
                     color=TextColor.SECONDARY.value,
                     font_weight= FontWeight.LIGHT_EXTRA.value
                 ),
                 rx.span(
                     "0",
-                    color= Color.ACCENT.value
+                    color= "#5865F2"
                 ),
                 padding_left=Size.DEFAULT.value
             ),
@@ -67,30 +47,30 @@ def server_state()->rx.Component:
                     color=TextColor.SECONDARY.value
                     ),
                 rx.span(
-                    "Actividad:",
+                    "Online:",
                     color=TextColor.SECONDARY.value,
                     font_weight= FontWeight.LIGHT_EXTRA.value
                 ),
                 rx.span(
-                    "0%",
-                    color= Color.ACCENT.value
+                    "0",
+                    color= "#5865F2"
                 ),
                 padding_left=Size.DEFAULT.value
             ),
             width="100%",
             align_items="start"   
         ),
+        href="https://discord.gg/pZQMW64sYT",
+        is_external=True,
         background_color= "rgba(0, 0, 0, 0.3)",
         padding=Size.DEFAULT.value,
         padding_right=Size.MEDIUM.value,
-        margin_top="10%",
-        width="auto",
-        height="auto",
+        width="15%",
+        height="100%",
         border_radius=Size.SMALL.value,
-        border=f"1px solid {Color.ACCENT.value}",
-        on_click=rx.set_clipboard("analand.net"),
+        border="2px solid #5865F2",
         _hover={
-            "background_color": "rgba(0, 0, 0, 0.5)"
+            "background_color": "rgba(0, 0, 0, 0.65)"
         },
         transition= "1s"
     )

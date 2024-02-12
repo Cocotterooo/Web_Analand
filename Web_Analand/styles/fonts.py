@@ -10,4 +10,5 @@ class Font(Enum):
 class FontWeight(Enum):
     LIGHT_EXTRA = "100"
     LIGHT = "200"
+    MEDIUM = "300"
     BOLD = "400"

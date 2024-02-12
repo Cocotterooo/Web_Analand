@@ -4,22 +4,24 @@
 import { Fragment, useCallback, useContext } from "react"
 import { Fragment_fd0e7cb8f9fb4669a6805377d925fba0 } from "/utils/stateful_components"
 import { Badge, Box, Button, Flex, Heading, HStack, Image as ChakraImage, Link, Spacer, Text, VStack } from "@chakra-ui/react"
+import { ScrollArea as RadixThemesScrollArea } from "@radix-ui/themes"
 import NextLink from "next/link"
 import "focus-visible/dist/focus-visible"
 import { EventLoopContext } from "/utils/context"
 import { Event } from "/utils/state"
 import { ActivityIcon as LucideActivityIcon, PowerIcon as LucidePowerIcon, ServerIcon as LucideServerIcon, UserRoundIcon as LucideUserRoundIcon } from "lucide-react"
+import { DiscordLogoIcon as RadixThemesDiscordLogoIcon } from "@radix-ui/react-icons"
 import NextHead from "next/head"
 
 
 
-export function Button_24351c9fffc9d90e1b5e194e24d47600 () {
+export function Button_287c9505d2ccf192257302222d1bb76c () {
   const [addEvents, connectError] = useContext(EventLoopContext);
 
   const on_click_a9b4a20edc8c9ec69de1d84b4ff5c3d8 = useCallback((_e) => addEvents([Event("_set_clipboard", {content:`analand.net`})], (_e), {}), [addEvents, Event])
 
   return (
-    <Button onClick={on_click_a9b4a20edc8c9ec69de1d84b4ff5c3d8} sx={{"backgroundColor": "rgba(0, 0, 0, 0.3)", "padding": "1em", "paddingRight": "1.2em", "marginTop": "10%", "width": "auto", "height": "auto", "borderRadius": "0.6em", "border": "1px solid #FFCC00", "_hover": {"backgroundColor": "rgba(0, 0, 0, 0.5)"}, "transition": "1s"}}>
+    <Button onClick={on_click_a9b4a20edc8c9ec69de1d84b4ff5c3d8} sx={{"backgroundColor": "rgba(0, 0, 0, 0.3)", "padding": "1em", "paddingRight": "1.2em", "width": "15%", "height": "auto", "borderRadius": "0.6em", "border": "2px solid #FFCC00", "_hover": {"backgroundColor": "rgba(0, 0, 0, 0.65)"}, "transition": "1s"}}>
   <VStack alignItems={`start`} sx={{"width": "100%"}}>
   <HStack sx={{"width": "100%", "paddingBottom": "0.6em"}}>
   <LucideServerIcon css={{"color": "#fff", "width": "2em", "height": "2em"}}>
@@ -72,8 +74,10 @@ export default function Component() {
   return (
     <Fragment>
   <Fragment_fd0e7cb8f9fb4669a6805377d925fba0/>
-  <Box sx={{"backgroundColor": "rgba(0, 0, 0, 0.7)", "width": "100%", "height": "100vh"}}>
-  <HStack sx={{"bg": "rgba(0, 0, 0, 0.5)", "position": "sticky", "paddingRight": "1.5em", "paddingY": "0.3em", "zIndex": "999", "top": "0", "width": "100%"}}>
+  <VStack>
+  <Flex>
+  <RadixThemesScrollArea css={{"height": "100vh", "backgroundColor": "#1A1A1A"}} scrollbars={`vertical`} type={`hover`}>
+  <HStack sx={{"borderTop": "1px solid #FFCC00", "bg": "#151515", "position": "sticky", "paddingRight": "1.5em", "paddingY": "0.3em", "zIndex": "999", "top": "0", "width": "100%"}}>
   <Link as={NextLink} href={`/`} sx={{"width": "10%", "color": "#fff", "fontSize": "1.5em", "margin": "0.3em", "marginLeft": "0.6em", "_hover": {"underline": "none"}}}>
   <HStack>
   <ChakraImage alt={`Logotipo de Analand Super formado por un cuadrado a su vez
@@ -121,6 +125,7 @@ export default function Component() {
 </Link>
 </HStack>
 </HStack>
+  <Box sx={{"background": "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/galeria/cueva_elevador.png') center/cover no-repeat", "background-attachment": "fixed", "width": "100vw", "height": "100vh"}}>
   <Flex align={`center`} direction={`column`} justify={`center`} sx={{"width": "100%", "height": "100vh"}}>
   <Text as={`span`} sx={{"letterSpacing": "0.1em", "fontSize": "2em", "color": "white", "fontFamily": "Montserrat", "fontWeight": "300"}}>
   {`BIENVENIDO A `}
@@ -131,10 +136,107 @@ export default function Component() {
   <Text as={`span`} sx={{"textAlign": "center", "marginTop": "1.5em", "letterSpacing": "0.1em", "fontSize": "1.5em", "color": "white", "fontFamily": "Montserrat", "fontStyle": "italic", "fontWeight": "200"}}>
   {`TU DIVERSIÓN ES NUESTRA PASIÓN EN CADA DETALLE`}
 </Text>
-  <Button_24351c9fffc9d90e1b5e194e24d47600/>
+  <HStack justify={`center`} spacing={`2em`} sx={{"marginTop": "10%", "width": "100%"}}>
+  <Button_287c9505d2ccf192257302222d1bb76c/>
+  <Link as={NextLink} href={`https://discord.gg/pZQMW64sYT`} isExternal={true} sx={{"backgroundColor": "rgba(0, 0, 0, 0.3)", "padding": "1em", "paddingRight": "1.2em", "width": "15%", "height": "100%", "borderRadius": "0.6em", "border": "2px solid #5865F2", "_hover": {"backgroundColor": "rgba(0, 0, 0, 0.65)"}, "transition": "1s"}}>
+  <VStack alignItems={`start`} sx={{"width": "100%"}}>
+  <HStack sx={{"width": "100%", "paddingBottom": "0.6em"}}>
+  <RadixThemesDiscordLogoIcon css={{"width": "2em", "height": "2em", "color": "#fff"}}/>
+  <Text sx={{"fontSize": "1em", "color": "#fff"}}>
+  {`Nuestro Discord`}
+</Text>
+</HStack>
+  <HStack sx={{"paddingLeft": "1em"}}>
+  <LucideUserRoundIcon css={{"color": "#CBCBCB"}}>
+  {`user-round`}
+</LucideUserRoundIcon>
+  <Text as={`span`} sx={{"color": "#CBCBCB", "fontWeight": "100"}}>
+  {`Usuarios:`}
+</Text>
+  <Text as={`span`} sx={{"color": "#5865F2"}}>
+  {`0`}
+</Text>
+</HStack>
+  <HStack sx={{"paddingLeft": "1em"}}>
+  <LucideActivityIcon css={{"color": "#CBCBCB"}}>
+  {`activity`}
+</LucideActivityIcon>
+  <Text as={`span`} sx={{"color": "#CBCBCB", "fontWeight": "100"}}>
+  {`Online:`}
+</Text>
+  <Text as={`span`} sx={{"color": "#5865F2"}}>
+  {`0`}
+</Text>
+</HStack>
+</VStack>
+</Link>
+</HStack>
 </Flex>
-  <ChakraImage src={`/galeria/cueva_elevador.png`} sx={{"width": "100%", "height": "100%", "objectFit": "cover", "position": "fixed", "top": "0", "left": "0", "zIndex": "-1"}}/>
 </Box>
+  <Flex align={`center`} direction={`column`} justify={`top`} sx={{"borderTop": "1px solid #FFCC00", "width": "100%", "height": "100vh"}}>
+  <Box sx={{"width": "40%", "textAlign": "center", "fontFamily": "Comfortaa", "fontWeight": "50", "marginTop": "3em", "color": "#CBCBCB"}}>
+  <VStack>
+  <Text sx={{"fontFamily": "Montserrat", "fontWeight": "300", "letterSpacing": "0.1em", "fontSize": "2em", "color": "#fff"}}>
+  {`Nuestro Enfoque`}
+</Text>
+  <Text sx={{"fontFamily": "Montserrat", "fontWeight": "200", "fontStyle": "italic", "letterSpacing": "0.1em", "textAlign": "center", "fontSize": "1.2em", "color": "#fff", "marginTop": "2em"}}>
+  {`CALIDAD > GANANCIAS`}
+</Text>
+</VStack>
+  <Box sx={{"marginTop": "2em", "marginBottom": "1.5em"}}>
+  <Text as={`span`}>
+  {`Bienvenido a`}
+</Text>
+  <Text as={`span`} sx={{"font-weight": "bold"}}>
+  {` Analand Super™`}
+</Text>
+  <Text as={`span`}>
+  {`, un proyecto que crece cada día más para ofrecerte la`}
+</Text>
+  <Text as={`span`} sx={{"font-weight": "bold"}}>
+  {` mejor experiencia`}
+</Text>
+  <Text as={`span`}>
+  {` en el mundo de Minecraft que podamos darte.`}
+</Text>
+  <Text as={`span`}>
+  {` Nuestra prioridad es que te`}
+</Text>
+  <Text as={`span`} sx={{"font-weight": "bold"}}>
+  {` diviertas y disfrutes`}
+</Text>
+  <Text as={`span`}>
+  {` de cada detalle sin abusar de nuestros usuarios económicamente.`}
+</Text>
+</Box>
+  <Text as={`span`}>
+  {`🌟`}
+</Text>
+  <Box sx={{"marginY": "1.5em"}}>
+  <Text as={`span`}>
+  {`En esta web podrás encontrar`}
+</Text>
+  <Text as={`span`} sx={{"fontWeight": "bold"}}>
+  {` nuestra tienda`}
+</Text>
+  <Text as={`span`}>
+  {`, las reglas, las`}
+</Text>
+  <Text as={`span`} sx={{"fontWeight": "bold"}}>
+  {` últimas novedades`}
+</Text>
+  <Text as={`span`}>
+  {` y algunas estadísticas sobre Analand y sus usuarios. :)`}
+</Text>
+</Box>
+  <Text as={`span`}>
+  {`✨ ¡Esperamos que lo disfrutes! ✨`}
+</Text>
+</Box>
+</Flex>
+</RadixThemesScrollArea>
+</Flex>
+</VStack>
   <NextHead>
   <title>
   {`Reflex App`}

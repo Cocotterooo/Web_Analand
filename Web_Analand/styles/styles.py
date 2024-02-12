@@ -28,6 +28,9 @@ BASE_STYLE = {
     "font_family": Font.DEFAULT.value,
     "font_weight": FontWeight.LIGHT.value,
     "color": TextColor.PRIMARY.value,
+    "::selection": {
+        "background_color": "rgba(255, 204, 0, 0.3)",
+    },
 }
 
 navBar_link = dict(
