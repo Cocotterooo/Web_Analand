@@ -22,7 +22,7 @@ jobs:
           python-version: '3.11'
 
       - name: Run build script
-        run: chmod +x ./Web_Analand/build.sh
+        run: chmod +x ./build.sh
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
