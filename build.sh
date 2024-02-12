@@ -1,4 +1,4 @@
-cd Web_Analand
+
 python -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
