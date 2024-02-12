@@ -6,8 +6,11 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react"
 import theme from "/utils/theme.js"
 import { css, Global } from "@emotion/react"
 import ChakraColorModeProvider from "/components/reflex/chakra_color_mode_provider.js"
-import { Fragment } from "react"
+import RadixThemesColorModeProvider from "/components/reflex/radix_themes_color_mode_provider.js"
+import { Theme as RadixThemesTheme } from "@radix-ui/themes"
+import "@radix-ui/themes/styles.css"
 import "focus-visible/dist/focus-visible"
+import { Fragment } from "react"
 
 
 import { EventLoopProvider, StateProvider } from "/utils/context.js";
@@ -31,9 +34,13 @@ function AppWrap({children}) {
     <ChakraProvider theme={extendTheme(theme)}>
   <Global styles={GlobalStyles}/>
   <ChakraColorModeProvider>
+  <RadixThemesColorModeProvider>
+  <RadixThemesTheme accentColor={`blue`} css={{...theme.styles.global[':root'], ...theme.styles.global.body}}>
   <Fragment>
   {children}
 </Fragment>
+</RadixThemesTheme>
+</RadixThemesColorModeProvider>
 </ChakraColorModeProvider>
 </ChakraProvider>
   )
