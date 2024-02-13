@@ -5,7 +5,10 @@ from Web_Analand.styles.styles import Size
 from Web_Analand.styles.colors import Color, TextColor
 from Web_Analand.styles.fonts import FontWeight
 
-def discord_card()->rx.Component:
+
+DISCORD_COLOR = "#5865F2"
+
+def discord_card(title:str, invitation_url:str)->rx.Component:
     return rx.link( 
         rx.vstack(
             rx.hstack(
@@ -37,7 +40,7 @@ def discord_card()->rx.Component:
                 ),
                 rx.span(
                     "0",
-                    color= "#5865F2"
+                    color= DISCORD_COLOR
                 ),
                 padding_left=Size.DEFAULT.value
             ),
@@ -53,7 +56,7 @@ def discord_card()->rx.Component:
                 ),
                 rx.span(
                     "0",
-                    color= "#5865F2"
+                    color= DISCORD_COLOR
                 ),
                 padding_left=Size.DEFAULT.value
             ),
@@ -68,7 +71,7 @@ def discord_card()->rx.Component:
         width="15%",
         height="100%",
         border_radius=Size.SMALL.value,
-        border="2px solid #5865F2",
+        border=f"2px solid {DISCORD_COLOR}",
         _hover={
             "background_color": "rgba(0, 0, 0, 0.65)"
         },

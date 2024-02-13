@@ -1,4 +1,6 @@
 import reflex as rx
+import reflex.components.radix.themes as rdxt
+
 from Web_Analand.styles.styles import Size
 from Web_Analand.styles.fonts import Font
 from Web_Analand.styles.colors import Color, TextColor
@@ -10,27 +12,24 @@ def focus_info() -> rx.component:
     return rx.box(
         rx.vstack(
             title("Nuestro Enfoque"),
-            subtitle("CALIDAD > GANANCIAS"),
+            subtitle("LA CALIDAD ES NUESTRA PRIORIDAD"),
         ),
-        rx.box(
-            rx.span("Bienvenido a"),
-            rx.span(" Analand Super™", style={"font-weight": "bold"}),
-            rx.span(", un proyecto que crece cada día más para ofrecerte la"),
-            rx.span(" mejor experiencia", style={"font-weight": "bold"}),
-            rx.span(" en el mundo de Minecraft que podamos darte."),
-            rx.span(" Nuestra prioridad es que te"),
-            rx.span(" diviertas y disfrutes", style={"font-weight": "bold"}),
-            rx.span(" de cada detalle sin abusar de nuestros usuarios económicamente."),
+        rx.text("Bienvenido a ",
+            rdxt.strong("Analand Super™"),
+            " un proyecto que crece cada día más y más para ofrecerte la",
+            rdxt.strong(" mejor experiencia"),
+            " en el mundo de Minecraft que podamos darte. Nuestra prioridad es que te",
+            rdxt.strong(" diviertas y disfrutes"),
+            " de cada detalle sin abusar de nuestros usuarios económicamente.",
             margin_top=Size.LARGE.value,
             margin_bottom=Size.BIG.value
         ),
         rx.span("🌟"),
-        rx.box(
-            rx.span("En esta web podrás encontrar"),
-            rx.span(" nuestra tienda", font_weight="bold"),
-            rx.span(", las reglas, las"),
-            rx.span(" últimas novedades", font_weight="bold"),
-            rx.span(" y algunas estadísticas sobre Analand y sus usuarios. :)"),
+        rx.text("En esta web podrás encontrar",
+            rdxt.strong(" nuestra tienda"),
+            ", las reglas, las",
+            rdxt.strong(" últimas novedades"),
+            " y algunas estadísticas sobre Analand y sus usuarios. :)",
             margin_y=Size.BIG.value
         ),
         rx.span("✨ ¡Esperamos que lo disfrutes! ✨"),

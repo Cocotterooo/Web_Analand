@@ -4,7 +4,7 @@ from Web_Analand.styles.styles import Size
 from Web_Analand.styles.colors import Color, TextColor
 from Web_Analand.styles.fonts import FontWeight
 
-def server_state()->rx.Component:
+def server_state(title:str, server_ip:str)->rx.Component:
     return rx.button( 
         rx.vstack(
             rx.hstack(
@@ -17,7 +17,7 @@ def server_state()->rx.Component:
                     color=Color.TERCIARY.value
                 ),
                 rx.text(
-                    "analand.net", 
+                    title, 
                     font_size=Size.DEFAULT.value, 
                     color=TextColor.PRIMARY.value
                 ),
@@ -87,7 +87,7 @@ def server_state()->rx.Component:
         height="auto",
         border_radius=Size.SMALL.value,
         border=f"2px solid {Color.ACCENT.value}",
-        on_click=rx.set_clipboard("analand.net"),
+        on_click=rx.set_clipboard(server_ip),
         _hover={
             "background_color": "rgba(0, 0, 0, 0.65)"
         },

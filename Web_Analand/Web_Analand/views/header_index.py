@@ -4,6 +4,7 @@ from Web_Analand.styles.fonts import Font
 
 from Web_Analand.components.server_state_card import server_state
 from Web_Analand.components.discord_card import discord_card
+from Web_Analand.constants import SERVER_IP_PRIMARY, DISCORD_URL
 
 def header_index() -> rx.component:    
     return rx.flex(
@@ -35,8 +36,8 @@ def header_index() -> rx.component:
             font_weight="200"
         ),
         rx.hstack(
-            server_state(),
-            discord_card(),
+            server_state(SERVER_IP_PRIMARY, SERVER_IP_PRIMARY),
+            discord_card("Nuestro Discord", DISCORD_URL),
             margin_top="10%",
             justify="center",  
             spacing=Size.LARGE.value,
