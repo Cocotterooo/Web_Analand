@@ -22,7 +22,8 @@ class IndexState(rx.State):
     discord_info: dict
 
     async def get_discord_info(self):
-        discord_info = discord("TOKEN", DISCORD_GUILD_ID)
+        self.discord_info = None
+        #discord_info = discord("TOKEN", DISCORD_GUILD_ID)
 
 @rx.page(
     title=utils.index_title,
