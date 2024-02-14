@@ -26,7 +26,7 @@ class IndexState(rx.State):
         #discord_info = discord("TOKEN", DISCORD_GUILD_ID)
 
 @rx.page(
-    title=utils.index_title,
+    title="utils.index_title",
     description=utils.index_description,
     image=utils.preview,
     #meta=utils.index_meta,
