@@ -17,8 +17,8 @@ from Web_Analand.constants import DISCORD_GUILD_ID
 #api:
 #from Web_Analand.api.discord import discord
 
-class IndexState(rx.State):
-    pass
+#class IndexState(rx.State):
+#    pass
     #discord_info: dict
 
     #async def get_discord_info(self):
