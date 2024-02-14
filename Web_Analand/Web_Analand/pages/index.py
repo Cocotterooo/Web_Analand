@@ -20,13 +20,15 @@ from Web_Analand.constants import DISCORD_GUILD_ID
 class IndexState(rx.State):
     pass
     #discord_info: dict
+#MTE3OTE4MzE5MjkxNDI3MjI3Ng.Ghrbqz.4spjgsHDDDCOKyFKRO6NtgzxjQMfmG5z4xgSWo
+
 
     #async def get_discord_info(self):
         #self.discord_info = None
         #discord_info = discord("TOKEN", DISCORD_GUILD_ID)
 
 @rx.page(
-    title="utils.index_title",
+    title=utils.index_title,
     description=utils.index_description,
     image=utils.preview,
     #meta=utils.index_meta,
