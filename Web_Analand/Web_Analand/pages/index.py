@@ -19,17 +19,17 @@ from Web_Analand.constants import DISCORD_GUILD_ID
 
 class IndexState(rx.State):
     pass
-    #discord_info: dict
+    discord_info: dict
 
-    #async def discord_info(self):
-    #    discord_info = discord("TOKEN", DISCORD_GUILD_ID)
+    async def get_discord_info(self):
+        discord_info = discord("TOKEN", DISCORD_GUILD_ID)
 
 @rx.page(
     title=utils.index_title,
     description=utils.index_description,
     image=utils.preview,
     #meta=utils.index_meta,
-    #on_load=[IndexState.discord_info]
+    on_load=[IndexState.get_discord_info]
 )
 def index():
     return rx.vstack(
