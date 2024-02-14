@@ -6,5 +6,6 @@ config = rx.Config(
         "http://localhost:3000",
         "https://analand.net",
         "https://web-analand.vercel.app"
+        "https://web-analand-ewbvxwt7f-manuels-projects-f077ea90.vercel.app"
     ],
 )
