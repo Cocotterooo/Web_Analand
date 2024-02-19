@@ -5,7 +5,7 @@
 [![Vercel](https://img.shields.io/badge/Vercel-static-gray?style=for-the-badge&logo=vercel&logoColor=white&labelColor=101010)](https://vercel.com)
 [![Railway](https://img.shields.io/badge/Railway-logic-gray?style=for-the-badge&logo=vercel&logoColor=white&labelColor=101010)](https://railway.app)
 
-## Proyecto web "Calendario de aDEViento" con Python puro y Reflex
+## Proyecto web "Analand Super" con Python puro y Reflex
 
 ![https://analand.net](./images/preview.png)
 
