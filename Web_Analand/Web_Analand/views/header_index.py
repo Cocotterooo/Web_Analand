@@ -6,9 +6,9 @@ from Web_Analand.components.server_state_card import server_state
 from Web_Analand.components.discord_card import discord_card
 from Web_Analand.constants import SERVER_IP_PRIMARY, DISCORD_URL
 
-def header_index() -> rx.component:    
-    return rx.flex(
-        rx.span(
+def header_index() -> rx.components:    
+    return rx.chakra.flex(
+        rx.chakra.span(
             "BIENVENIDO A ",
             letter_spacing="0.1em",
             font_size=Size.LARGE.value,
@@ -16,7 +16,7 @@ def header_index() -> rx.component:
             font_family=Font.TITLE.value,
             font_weight="300"
         ),
-        rx.span(
+        rx.chakra.span(
             "ANALAND SUPER™",
             letter_spacing="0.1em",
             font_size=Size.LARGE.value,
@@ -24,7 +24,7 @@ def header_index() -> rx.component:
             font_family=Font.TITLE.value,
             font_weight="400"
         ),
-        rx.span(
+        rx.chakra.span(
             "TU DIVERSIÓN, ES NUESTRA PASIÓN EN CADA DETALLE",
             text_align="center",
             margin_top=Size.BIG.value,
@@ -35,7 +35,7 @@ def header_index() -> rx.component:
             font_style="italic",
             font_weight="200"
         ),
-        rx.hstack(
+        rx.chakra.hstack(
             server_state(SERVER_IP_PRIMARY, SERVER_IP_PRIMARY),
             discord_card("Nuestro Discord", DISCORD_URL),
             margin_top="10%",

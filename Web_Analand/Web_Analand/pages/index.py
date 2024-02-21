@@ -35,12 +35,12 @@ class IndexState(rx.State):
     #on_load=[IndexState.get_discord_info]
 )
 def index():
-    return rx.vstack(
+    return rx.chakra.vstack(
         # Background image with dark overlay style
-        rx.flex(
+        rx.chakra.flex(
             rdxt.scroll_area(
                 top_navbar(),
-                rx.box(
+                rx.chakra.box(
                     header_index(),
                     style={
                         "background": "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/galeria/cueva_elevador.png') center/cover no-repeat",
@@ -49,20 +49,20 @@ def index():
                         "height": "100vh",
                     }
                 ),
-                rx.flex(
+                rx.chakra.flex(
                     focus_info(),
                     border_top= f"1px solid {Color.ACCENT.value}",
-                    direction="column",     # Sets the direction of main axis to column
-                    align="center",         # Centers along the cross axis (horizontal centering)
-                    justify="top",          # Centers along the main axis (vertical centering)
-                    width="100%",           # Use 100% width if you want to center in the viewport
+                    direction="column",  # Sets the direction of main axis to column
+                    align="center",      # Centers along the cross axis (horizontal centering)
+                    justify="top",       # Centers along the main axis (vertical centering)
+                    width="100%",        # Use 100% width if you want to center in the viewport
                     height="100vh" 
                 ),
                 style={
                     "height": "100vh",
                     "background_color": Color.PRIMARY.value
                 },
-                type_="hover",  # Scrollbars are always visible
+                type="hover",  # Scrollbars are always visible
                 scrollbars="vertical"
             )
         )

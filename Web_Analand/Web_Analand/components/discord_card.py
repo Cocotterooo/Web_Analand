@@ -1,5 +1,4 @@
 import reflex as rx
-import reflex.components.radix.themes as rdxt
 
 from Web_Analand.styles.styles import Size 
 from Web_Analand.styles.colors import Color, TextColor
@@ -8,17 +7,17 @@ from Web_Analand.styles.fonts import FontWeight
 
 DISCORD_COLOR = "#5865F2"
 
-def discord_card(title:str, invitation_url:str)->rx.Component:
+def discord_card(title:str, invitation_url:str)->rx.components:
     return rx.link( 
         rx.vstack(
             rx.hstack(
-                rdxt.icon(
-                    tag="discord_logo",
+                rx.image(
+                    src="/icons/discord.svg",
                     style={
                         "width": Size.LARGE.value, 
                         "height": Size.LARGE.value
                     },
-                    color=Color.TERCIARY.value
+                    color=DISCORD_COLOR
                 ),
                 rx.text(
                     "Nuestro Discord", 
@@ -26,19 +25,20 @@ def discord_card(title:str, invitation_url:str)->rx.Component:
                     color=TextColor.PRIMARY.value
                 ),
                 width="100%",
-                padding_bottom=Size.SMALL.value
+                padding_bottom=Size.SMALL.value,
+                align_items="center"
             ),
             rx.hstack(
                 rx.lucide.icon(
                     "user-round",
                     color=TextColor.SECONDARY.value
                 ),
-                rx.span(
+                rx.text(
                     "Usuarios:",
                     color=TextColor.SECONDARY.value,
                     font_weight= FontWeight.LIGHT_EXTRA.value
                 ),
-                rx.span(
+                rx.text(
                     "0",
                     color= DISCORD_COLOR
                 ),
@@ -49,12 +49,12 @@ def discord_card(title:str, invitation_url:str)->rx.Component:
                     "activity",
                     color=TextColor.SECONDARY.value
                     ),
-                rx.span(
+                rx.text(
                     "Online:",
                     color=TextColor.SECONDARY.value,
                     font_weight= FontWeight.LIGHT_EXTRA.value
                 ),
-                rx.span(
+                rx.text(
                     "0",
                     color= DISCORD_COLOR
                 ),

@@ -4,10 +4,10 @@ from Web_Analand.styles.styles import Size
 from Web_Analand.styles.colors import TextColor
 from Web_Analand.styles.fonts import Font
 
-def logotipo() -> rx.Component:
-    return rx.link(
-        rx.hstack(
-            rx.image(
+def logotipo() -> rx.components:
+    return rx.chakra.link(
+        rx.chakra.hstack(
+            rx.chakra.image(
                 src= "/logotipo.svg",
                 alt= '''Logotipo de Analand Super formado por un cuadrado a su vez
                     formado por cuatro cuadrados amarillos en distintas tonalidades, 
@@ -16,7 +16,7 @@ def logotipo() -> rx.Component:
                 height= "auto",
                 margin_bottom= "0.05em"
             ),
-            rx.heading(
+            rx.chakra.heading(
                 "ANALAND SUPER",
                 font_size= "lg",
                 fontFamily= Font.TITLE.value,

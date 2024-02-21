@@ -9,18 +9,18 @@ from Web_Analand.styles.colors import TextColor
 from Web_Analand.components.logotipo import logotipo
 from Web_Analand.components.link_buttom_navbar import link_buttom_navbar
 
-def top_navbar(background_color:str=Color.SECONDARY.value) -> rx.Component:
-    return rx.hstack(
+def top_navbar(background_color:str=Color.SECONDARY.value) -> rx.components:
+    return rx.chakra.hstack(
         logotipo(),
-        rx.spacer(),
-        rx.hstack(
+        rx.chakra.spacer(),
+        rx.chakra.hstack(
             link_buttom_navbar("Inicio", "/"),
             link_buttom_navbar("Blog", "/"),
             link_buttom_navbar("Tienda", "/"),
             link_buttom_navbar("Reglas", "/"),
             link_buttom_navbar("Soporte", "/"),
             link_buttom_navbar("Nosotros", "/"),
-            rx.link(
+            rx.chakra.link(
                 "Iniciar Sesión",
                 href= "/",
                 style= navBar_link,

@@ -8,31 +8,31 @@ from Web_Analand.styles.colors import Color, TextColor
 from Web_Analand.components.title_subtitle import title, subtitle
 
 
-def focus_info() -> rx.component:
-    return rx.box(
-        rx.vstack(
+def focus_info() -> rx.components:
+    return rx.chakra.box(
+        rx.chakra.vstack(
             title("Nuestro Enfoque"),
             subtitle("LA CALIDAD ES NUESTRA PRIORIDAD"),
         ),
-        rx.text("Bienvenido a ",
-            rdxt.strong("Analand Super™"),
+        rx.chakra.text("Bienvenido a ",
+            rx.text.strong("Analand Super™"),
             " un proyecto que crece cada día más y más para ofrecerte la",
-            rdxt.strong(" mejor experiencia"),
+            rx.text.strong(" mejor experiencia"),
             " en el mundo de Minecraft que podamos darte. Nuestra prioridad es que te",
-            rdxt.strong(" diviertas y disfrutes"),
+            rx.text.strong(" diviertas y disfrutes"),
             " de cada detalle sin abusar de nuestros usuarios económicamente.",
             margin_top=Size.LARGE.value,
             margin_bottom=Size.BIG.value
         ),
-        rx.span("🌟"),
-        rx.text("En esta web podrás encontrar",
-            rdxt.strong(" nuestra tienda"),
+        rx.chakra.span("🌟"),
+        rx.chakra.text("En esta web podrás encontrar",
+            rx.text.strong(" nuestra tienda"),
             ", las reglas, las",
-            rdxt.strong(" últimas novedades"),
+            rx.text.strong(" últimas novedades"),
             " y algunas estadísticas sobre Analand y sus usuarios. :)",
             margin_y=Size.BIG.value
         ),
-        rx.span("✨ ¡Esperamos que lo disfrutes! ✨"),
+        rx.chakra.span("✨ ¡Esperamos que lo disfrutes! ✨"),
         width="40%",
         text_align="center",
         font_family=Font.SECONDARY.value,
