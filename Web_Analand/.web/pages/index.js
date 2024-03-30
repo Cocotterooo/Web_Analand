@@ -4,55 +4,14 @@
 import { Fragment, useCallback, useContext } from "react"
 import { EventLoopContext } from "/utils/context"
 import { Event, getBackendURL, isTrue } from "/utils/state"
-import { Dialog as RadixThemesDialog, Flex as RadixThemesFlex, Link as RadixThemesLink, ScrollArea as RadixThemesScrollArea, Strong as RadixThemesStrong, Text as RadixThemesText } from "@radix-ui/themes"
+import { Box as RadixThemesBox, Dialog as RadixThemesDialog, Flex as RadixThemesFlex, Link as RadixThemesLink, ScrollArea as RadixThemesScrollArea, Strong as RadixThemesStrong, Text as RadixThemesText } from "@radix-ui/themes"
 import env from "/env.json"
-import { Badge, Box, Button, Flex, Heading, HStack, Image as ChakraImage, Link, Spacer, Text, VStack } from "@chakra-ui/react"
-import NextLink from "next/link"
+import { Badge, Box, Button, HStack, Text, VStack } from "@chakra-ui/react"
 import { ActivityIcon as LucideActivityIcon, PowerIcon as LucidePowerIcon, ServerIcon as LucideServerIcon, UserRoundIcon as LucideUserRoundIcon } from "lucide-react"
+import NextLink from "next/link"
 import NextHead from "next/head"
 
 
-
-export function Link_44d088429d95e234b534e97c7d0b80ff () {
-
-
-  return (
-    <RadixThemesLink asChild={true} css={{"backgroundColor": "rgba(0, 0, 0, 0.3)", "padding": "1em", "paddingRight": "1.2em", "width": "15%", "height": "100%", "borderRadius": "0.6em", "border": "2px solid #5865F2", "&:hover": {"backgroundColor": "rgba(0, 0, 0, 0.65)"}, "transition": "1s"}} target={isTrue(true) ? `_blank` : ``}>
-  <NextLink href={`https://discord.gg/pZQMW64sYT`} passHref={true}>
-  <RadixThemesFlex align={`start`} css={{"width": "100%", "alignItems": "start", "flexDirection": "column"}} gap={`2`}>
-  <RadixThemesFlex align={`start`} css={{"width": "100%", "paddingBottom": "0.6em", "alignItems": "center", "flexDirection": "row"}} gap={`2`}>
-  <img css={{"width": "2em", "height": "2em", "color": "#5865F2"}} src={`/icons/discord.svg`}/>
-  <RadixThemesText as={`p`} css={{"fontSize": "1em", "color": "#fff"}}>
-  {`Nuestro Discord`}
-</RadixThemesText>
-</RadixThemesFlex>
-  <RadixThemesFlex align={`start`} css={{"paddingLeft": "1em", "flexDirection": "row"}} gap={`2`}>
-  <LucideUserRoundIcon css={{"color": "#CBCBCB"}}>
-  {`user-round`}
-</LucideUserRoundIcon>
-  <RadixThemesText as={`p`} css={{"color": "#CBCBCB", "fontWeight": "100"}}>
-  {`Usuarios:`}
-</RadixThemesText>
-  <RadixThemesText as={`p`} css={{"color": "#5865F2"}}>
-  {`0`}
-</RadixThemesText>
-</RadixThemesFlex>
-  <RadixThemesFlex align={`start`} css={{"paddingLeft": "1em", "flexDirection": "row"}} gap={`2`}>
-  <LucideActivityIcon css={{"color": "#CBCBCB"}}>
-  {`activity`}
-</LucideActivityIcon>
-  <RadixThemesText as={`p`} css={{"color": "#CBCBCB", "fontWeight": "100"}}>
-  {`Online:`}
-</RadixThemesText>
-  <RadixThemesText as={`p`} css={{"color": "#5865F2"}}>
-  {`0`}
-</RadixThemesText>
-</RadixThemesFlex>
-</RadixThemesFlex>
-</NextLink>
-</RadixThemesLink>
-  )
-}
 
 export function Fragment_1762bb90abdb81b879b2a22edbbe01a1 () {
   const [addEvents, connectError] = useContext(EventLoopContext);
@@ -83,13 +42,13 @@ export function Fragment_1762bb90abdb81b879b2a22edbbe01a1 () {
   )
 }
 
-export function Button_287c9505d2ccf192257302222d1bb76c () {
+export function Button_0a88c4dc3b1be9a57f5ff37ae07d7665 () {
   const [addEvents, connectError] = useContext(EventLoopContext);
 
   const on_click_a9b4a20edc8c9ec69de1d84b4ff5c3d8 = useCallback((_e) => addEvents([Event("_set_clipboard", {content:`analand.net`})], (_e), {}), [addEvents, Event])
 
   return (
-    <Button onClick={on_click_a9b4a20edc8c9ec69de1d84b4ff5c3d8} sx={{"backgroundColor": "rgba(0, 0, 0, 0.3)", "padding": "1em", "paddingRight": "1.2em", "width": "15%", "height": "auto", "borderRadius": "0.6em", "border": "2px solid #FFCC00", "_hover": {"backgroundColor": "rgba(0, 0, 0, 0.65)"}, "transition": "1s"}}>
+    <Button onClick={on_click_a9b4a20edc8c9ec69de1d84b4ff5c3d8} sx={{"backgroundColor": "rgba(0, 0, 0, 0.3)", "padding": "1em", "paddingRight": "1.2em", "minWidth": "15%", "height": "auto", "borderRadius": "0.6em", "border": "2px solid #FFCC00", "_hover": {"backgroundColor": "rgba(0, 0, 0, 0.65)"}, "transition": "1s"}}>
   <VStack alignItems={`start`} sx={{"width": "100%"}}>
   <HStack sx={{"width": "100%", "paddingBottom": "0.6em"}}>
   <LucideServerIcon css={{"color": "#fff", "width": "2em", "height": "2em"}}>
@@ -143,74 +102,58 @@ export default function Component() {
     <Fragment>
   <Fragment_1762bb90abdb81b879b2a22edbbe01a1/>
   <VStack>
-  <Flex>
-  <RadixThemesScrollArea css={{"height": "100vh", "backgroundColor": "#1A1A1A"}} scrollbars={`vertical`} type={`hover`}>
-  <HStack sx={{"borderTop": "1px solid #FFCC00", "background": "#151515", "position": "sticky", "paddingRight": "1.5em", "paddingTop": "0.3em", "paddingBottom": "0.3em", "zIndex": "999", "top": "0", "width": "100%"}}>
-  <Link as={NextLink} href={`/`} sx={{"width": "10%", "color": "#fff", "fontSize": "1.5em", "margin": "0.3em", "marginLeft": "0.6em", "_hover": {"underline": "none"}}}>
-  <HStack>
-  <ChakraImage alt={`Logotipo de Analand Super formado por un cuadrado a su vez
-                    formado por cuatro cuadrados amarillos en distintas tonalidades, 
-                    con la letra A mezclada con una N hecha con la transparencia de los cuadrados del logotipo`} src={`/logotipo.svg`} sx={{"width": "2em", "height": "auto", "marginBottom": "0.05em"}}/>
-  <Heading sx={{"fontSize": "lg", "fontFamily": "Montserrat", "fontWeight": "bold"}}>
-  {`ANALAND SUPER`}
-</Heading>
-</HStack>
-</Link>
-  <Spacer/>
-  <HStack spacing={`1.5em`}>
-  <Box>
-  <Link as={NextLink} href={`/`} sx={{"fontFamily": "Montserrat", "letterSpacing": "0.05em", "fontWeight": "250", "color": "#CBCBCB", "fontSize": "1.2em", "transition": "0.4s", "_hover": {"underline": "none", "color": "#fff"}}}>
-  {`Inicio`}
-</Link>
-</Box>
-  <Box>
-  <Link as={NextLink} href={`/`} sx={{"fontFamily": "Montserrat", "letterSpacing": "0.05em", "fontWeight": "250", "color": "#CBCBCB", "fontSize": "1.2em", "transition": "0.4s", "_hover": {"underline": "none", "color": "#fff"}}}>
-  {`Blog`}
-</Link>
-</Box>
-  <Box>
-  <Link as={NextLink} href={`/`} sx={{"fontFamily": "Montserrat", "letterSpacing": "0.05em", "fontWeight": "250", "color": "#CBCBCB", "fontSize": "1.2em", "transition": "0.4s", "_hover": {"underline": "none", "color": "#fff"}}}>
-  {`Tienda`}
-</Link>
-</Box>
-  <Box>
-  <Link as={NextLink} href={`/`} sx={{"fontFamily": "Montserrat", "letterSpacing": "0.05em", "fontWeight": "250", "color": "#CBCBCB", "fontSize": "1.2em", "transition": "0.4s", "_hover": {"underline": "none", "color": "#fff"}}}>
-  {`Reglas`}
-</Link>
-</Box>
-  <Box>
-  <Link as={NextLink} href={`/`} sx={{"fontFamily": "Montserrat", "letterSpacing": "0.05em", "fontWeight": "250", "color": "#CBCBCB", "fontSize": "1.2em", "transition": "0.4s", "_hover": {"underline": "none", "color": "#fff"}}}>
-  {`Soporte`}
-</Link>
-</Box>
-  <Box>
-  <Link as={NextLink} href={`/`} sx={{"fontFamily": "Montserrat", "letterSpacing": "0.05em", "fontWeight": "250", "color": "#CBCBCB", "fontSize": "1.2em", "transition": "0.4s", "_hover": {"underline": "none", "color": "#fff"}}}>
-  {`Nosotros`}
-</Link>
-</Box>
-  <Link as={NextLink} href={`/`} sx={{"fontFamily": "Montserrat", "letterSpacing": "0.05em", "fontWeight": "200", "color": "#CBCBCB", "fontSize": "1.2em", "transition": "0.4s", "_hover": {"color": "#FFCC00", "border": "1px solid #FFCC00"}, "border": "1px solid #CBCBCB", "borderRadius": "0.3em", "paddingInlineStart": "0.3em", "paddingInlineEnd": "0.3em", "marginLeft": "1.5em"}}>
-  {`Iniciar Sesión`}
-</Link>
-</HStack>
-</HStack>
-  <Box sx={{"background": "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/galeria/cueva_elevador.png') center/cover no-repeat", "background-attachment": "fixed", "width": "100vw", "height": "100vh"}}>
-  <Flex align={`center`} direction={`column`} justify={`center`} sx={{"width": "100%", "height": "100vh"}}>
-  <Text as={`span`} sx={{"letterSpacing": "0.1em", "fontSize": "2em", "color": "white", "fontFamily": "Montserrat", "fontWeight": "300"}}>
+  <RadixThemesScrollArea css={{"backgroundColor": "#1A1A1A", "height": "100vh"}} scrollbars={`vertical`} type={`hover`}>
+  <RadixThemesBox css={{"background": "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/galeria/cueva_elevador.png') center/cover no-repeat", "background-attachment": "fixed", "@media screen and (min-width: 0)": {"backgroundSize": "cover", "backgroundPosition": "center", "backgroundRepeat": "no-repeat"}, "@media screen and (min-width: 30em)": {"backgroundSize": "cover", "backgroundPosition": "center", "backgroundRepeat": "no-repeat"}, "@media screen and (min-width: 48em)": {"backgroundSize": "cover", "backgroundPosition": "center", "backgroundRepeat": "no-repeat"}, "@media screen and (min-width: 62em)": {"backgroundSize": "cover", "backgroundPosition": "center", "backgroundRepeat": "no-repeat"}, "@media screen and (min-width: 80em)": {"backgroundSize": "cover", "backgroundPosition": "center", "backgroundRepeat": "no-repeat"}, "width": "100%", "height": "100%"}}>
+  <RadixThemesFlex align={`center`} css={{"width": "100%", "height": "85vh"}} direction={`column`} justify={`center`}>
+  <RadixThemesText as={`p`} css={{"letterSpacing": "0.1em", "fontSize": "2em", "color": "white", "fontFamily": "Montserrat", "fontWeight": "300"}}>
   {`BIENVENIDO A `}
-</Text>
-  <Text as={`span`} sx={{"letterSpacing": "0.1em", "fontSize": "2em", "color": "white", "fontFamily": "Montserrat", "fontWeight": "400"}}>
+</RadixThemesText>
+  <RadixThemesText as={`p`} css={{"letterSpacing": "0.1em", "fontSize": "2em", "color": "white", "fontFamily": "Montserrat", "fontWeight": "400"}}>
   {`ANALAND SUPER™`}
-</Text>
-  <Text as={`span`} sx={{"textAlign": "center", "marginTop": "1.5em", "letterSpacing": "0.1em", "fontSize": "1.5em", "color": "white", "fontFamily": "Montserrat", "fontStyle": "italic", "fontWeight": "200"}}>
+</RadixThemesText>
+  <RadixThemesText as={`p`} css={{"textAlign": "center", "marginTop": "1.5em", "letterSpacing": "0.1em", "fontSize": "1.5em", "color": "white", "fontFamily": "Montserrat", "fontStyle": "italic", "fontWeight": "200"}}>
   {`TU DIVERSIÓN, ES NUESTRA PASIÓN EN CADA DETALLE`}
-</Text>
-  <HStack justify={`center`} spacing={`2em`} sx={{"marginTop": "10%", "width": "100%"}}>
-  <Button_287c9505d2ccf192257302222d1bb76c/>
-  <Link_44d088429d95e234b534e97c7d0b80ff/>
-</HStack>
-</Flex>
-</Box>
-  <Flex align={`center`} direction={`column`} justify={`top`} sx={{"borderTop": "1px solid #FFCC00", "width": "100%", "height": "100vh"}}>
+</RadixThemesText>
+  <RadixThemesFlex align={`start`} css={{"marginTop": "10%", "width": "100%", "flexDirection": "row"}} justify={`center`} gap={`4`}>
+  <Button_0a88c4dc3b1be9a57f5ff37ae07d7665/>
+  <RadixThemesLink asChild={true}>
+  <NextLink css={{"isExternal": true, "backgroundColor": "rgba(0, 0, 0, 0.3)", "padding": "1em", "paddingRight": "1.2em", "minWidth": "15%", "height": "100%", "borderRadius": "0.6em", "border": "2px solid #5865F2", "&:hover": {"backgroundColor": "rgba(0, 0, 0, 0.65)"}, "transition": "1s"}} href={`https://discord.gg/pZQMW64sYT`} passHref={true}>
+  <RadixThemesFlex align={`start`} css={{"width": "100%", "alignItems": "start", "flexDirection": "column"}} gap={`2`}>
+  <RadixThemesFlex align={`start`} css={{"width": "100%", "paddingBottom": "0.6em", "alignItems": "center", "flexDirection": "row"}} gap={`2`}>
+  <img css={{"width": "2em", "height": "2em", "color": "#5865F2"}} src={`/icons/discord.svg`}/>
+  <RadixThemesText as={`p`} css={{"fontSize": "1em", "color": "#fff"}}>
+  {`Nuestro Discord`}
+</RadixThemesText>
+</RadixThemesFlex>
+  <RadixThemesFlex align={`start`} css={{"paddingLeft": "1em", "flexDirection": "row"}} gap={`2`}>
+  <LucideUserRoundIcon css={{"color": "#CBCBCB"}}>
+  {`user-round`}
+</LucideUserRoundIcon>
+  <RadixThemesText as={`p`} css={{"color": "#CBCBCB", "fontWeight": "100"}}>
+  {`Usuarios:`}
+</RadixThemesText>
+  <RadixThemesText as={`p`} css={{"color": "#5865F2"}}>
+  {`0`}
+</RadixThemesText>
+</RadixThemesFlex>
+  <RadixThemesFlex align={`start`} css={{"paddingLeft": "1em", "flexDirection": "row"}} gap={`2`}>
+  <LucideActivityIcon css={{"color": "#CBCBCB"}}>
+  {`activity`}
+</LucideActivityIcon>
+  <RadixThemesText as={`p`} css={{"color": "#CBCBCB", "fontWeight": "100"}}>
+  {`Online:`}
+</RadixThemesText>
+  <RadixThemesText as={`p`} css={{"color": "#5865F2"}}>
+  {`0`}
+</RadixThemesText>
+</RadixThemesFlex>
+</RadixThemesFlex>
+</NextLink>
+</RadixThemesLink>
+</RadixThemesFlex>
+</RadixThemesFlex>
+</RadixThemesBox>
+  <RadixThemesFlex align={`center`} css={{"borderTop": "1px solid #FFCC00", "width": "100%"}} direction={`column`} justify={`center`}>
   <Box sx={{"width": "40%", "textAlign": "center", "fontFamily": "Comfortaa", "fontWeight": "50", "marginTop": "3em", "color": "#CBCBCB"}}>
   <VStack>
   <Text sx={{"fontFamily": "Montserrat", "fontWeight": "300", "letterSpacing": "0.1em", "fontSize": "2em", "color": "#fff"}}>
@@ -253,9 +196,8 @@ export default function Component() {
   {`✨ ¡Esperamos que lo disfrutes! ✨`}
 </Text>
 </Box>
-</Flex>
+</RadixThemesFlex>
 </RadixThemesScrollArea>
-</Flex>
 </VStack>
   <NextHead>
   <title>

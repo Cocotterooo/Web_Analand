@@ -37,33 +37,32 @@ class IndexState(rx.State):
 def index():
     return rx.chakra.vstack(
         # Background image with dark overlay style
-        rx.chakra.flex(
             rdxt.scroll_area(
-                top_navbar(),
-                rx.chakra.box(
+                #top_navbar(),
+                rx.box(
                     header_index(),
                     style={
                         "background": "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/galeria/cueva_elevador.png') center/cover no-repeat",
-                        "background-attachment": "fixed",
-                        "width": "100vw",
-                        "height": "100vh",
+                        "background-attachment": "fixed", # Da el efecto de "persiana" al hacer scroll
+                        "background_size":["cover", "cover", "cover", "cover", "cover"],
+                        "background_position":["center", "center", "center", "center", "center"],
+                        "background_repeat":["no-repeat", "no-repeat", "no-repeat", "no-repeat", "no-repeat"],
+                        "width": "100%",
+                        "height": "100%",
                     }
                 ),
-                rx.chakra.flex(
+                rx.flex(
                     focus_info(),
                     border_top= f"1px solid {Color.ACCENT.value}",
-                    direction="column",  # Sets the direction of main axis to column
-                    align="center",      # Centers along the cross axis (horizontal centering)
-                    justify="top",       # Centers along the main axis (vertical centering)
-                    width="100%",        # Use 100% width if you want to center in the viewport
-                    height="100vh" 
+                    direction="column",
+                    align="center",
+                    justify="center",
+                    width="100%"
                 ),
-                style={
-                    "height": "100vh",
-                    "background_color": Color.PRIMARY.value
-                },
-                type="hover",  # Scrollbars are always visible
-                scrollbars="vertical"
+                background_color= Color.PRIMARY.value,
+                height= "100vh",
+                type= "hover",  # Scrollbars are always visible
+                scrollbars= "vertical"
             )
-        )
+        
     )

@@ -83,7 +83,7 @@ def server_state(title:str, server_ip:str)->rx.components:
         background_color= "rgba(0, 0, 0, 0.3)",
         padding=Size.DEFAULT.value,
         padding_right=Size.MEDIUM.value,
-        width="15%",
+        min_width= "15%",
         height="auto",
         border_radius=Size.SMALL.value,
         border=f"2px solid {Color.ACCENT.value}",

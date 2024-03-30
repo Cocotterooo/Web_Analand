@@ -7,8 +7,8 @@ from Web_Analand.components.discord_card import discord_card
 from Web_Analand.constants import SERVER_IP_PRIMARY, DISCORD_URL
 
 def header_index() -> rx.components:    
-    return rx.chakra.flex(
-        rx.chakra.span(
+    return rx.flex(
+        rx.text(
             "BIENVENIDO A ",
             letter_spacing="0.1em",
             font_size=Size.LARGE.value,
@@ -16,7 +16,7 @@ def header_index() -> rx.components:
             font_family=Font.TITLE.value,
             font_weight="300"
         ),
-        rx.chakra.span(
+        rx.text(
             "ANALAND SUPER™",
             letter_spacing="0.1em",
             font_size=Size.LARGE.value,
@@ -24,7 +24,7 @@ def header_index() -> rx.components:
             font_family=Font.TITLE.value,
             font_weight="400"
         ),
-        rx.chakra.span(
+        rx.text(
             "TU DIVERSIÓN, ES NUESTRA PASIÓN EN CADA DETALLE",
             text_align="center",
             margin_top=Size.BIG.value,
@@ -35,17 +35,17 @@ def header_index() -> rx.components:
             font_style="italic",
             font_weight="200"
         ),
-        rx.chakra.hstack(
+        rx.hstack(
             server_state(SERVER_IP_PRIMARY, SERVER_IP_PRIMARY),
             discord_card("Nuestro Discord", DISCORD_URL),
             margin_top="10%",
             justify="center",  
-            spacing=Size.LARGE.value,
+            spacing='4',
             width="100%"
         ),
         direction="column",     # Sets the direction of main axis to column
         align="center",         # Centers along the cross axis (horizontal centering)
         justify="center",       # Centers along the main axis (vertical centering)
         width="100%",           # Use 100% width if you want to center in the viewport
-        height="100vh"         # Use 100vh for full viewport height
+        height="85vh"           # Use 85vh for full viewport height
     )
