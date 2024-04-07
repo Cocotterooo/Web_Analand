@@ -67,6 +67,35 @@ export function Button_0a88c4dc3b1be9a57f5ff37ae07d7665 () {
   )
 }
 
+export function Fragment_1762bb90abdb81b879b2a22edbbe01a1 () {
+  const [addEvents, connectError] = useContext(EventLoopContext);
+
+
+  return (
+    <Fragment>
+  {isTrue(connectError !== null) ? (
+  <Fragment>
+  <RadixThemesDialog.Root open={connectError !== null}>
+  <RadixThemesDialog.Content>
+  <RadixThemesDialog.Title>
+  {`Connection Error`}
+</RadixThemesDialog.Title>
+  <RadixThemesText as={`p`}>
+  {`Cannot connect to server: `}
+  {(connectError !== null) ? connectError.message : ''}
+  {`. Check if server is reachable at `}
+  {getBackendURL(env.EVENT).href}
+</RadixThemesText>
+</RadixThemesDialog.Content>
+</RadixThemesDialog.Root>
+</Fragment>
+) : (
+  <Fragment/>
+)}
+</Fragment>
+  )
+}
+
 export function Link_dc08c4d912f2a218215936c559eb48f2 () {
 
 
@@ -105,35 +134,6 @@ export function Link_dc08c4d912f2a218215936c559eb48f2 () {
 </RadixThemesFlex>
 </NextLink>
 </RadixThemesLink>
-  )
-}
-
-export function Fragment_1762bb90abdb81b879b2a22edbbe01a1 () {
-  const [addEvents, connectError] = useContext(EventLoopContext);
-
-
-  return (
-    <Fragment>
-  {isTrue(connectError !== null) ? (
-  <Fragment>
-  <RadixThemesDialog.Root open={connectError !== null}>
-  <RadixThemesDialog.Content>
-  <RadixThemesDialog.Title>
-  {`Connection Error`}
-</RadixThemesDialog.Title>
-  <RadixThemesText as={`p`}>
-  {`Cannot connect to server: `}
-  {(connectError !== null) ? connectError.message : ''}
-  {`. Check if server is reachable at `}
-  {getBackendURL(env.EVENT).href}
-</RadixThemesText>
-</RadixThemesDialog.Content>
-</RadixThemesDialog.Root>
-</Fragment>
-) : (
-  <Fragment/>
-)}
-</Fragment>
   )
 }
 
