@@ -23,5 +23,4 @@ def subtitle(text:str = "Hello World", color:str = TextColor.PRIMARY.value) -> r
         text_align="center",
         font_size=Size.MEDIUM.value,
         color=color,
-        margin_top=Size.LARGE.value
     )

@@ -4,11 +4,16 @@ from enum import Enum
 from .fonts import Font, FontWeight
 from .colors import TextColor, Color
 
+# Constants:
+MAX_WIDTH = "650px"
+
+
 STYLESHEETS = [
     # FUENTE:
     "https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap", # Normal
     "https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap", # Titulos
-    "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" # Titulos
+    "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap", # Titulos
+    "/css/styles.css"
 ]
 
 class Size(Enum):
@@ -31,8 +36,21 @@ BASE_STYLE = {
     "::selection": {
         "background_color": "rgba(255, 204, 0, 0.3)",
     },
+    # Rx Components Styles:
+    rx.menu.item: {
+        "color": TextColor.SECONDARY.value,
+    },
+    rx.menu.separator: {
+        "border": f"1px solid {Color.ACCENT.value}",
+    },
+    rx.menu.content: {
+        "background_color": Color.PRIMARY.value,
+        "border": f"2px solid {Color.SECONDARY.value}"
+    }
 }
 
+
+# Custom Components Styles:
 navBar_link = dict(
     fontFamily= Font.TITLE.value,
     letter_spacing= "0.05em",
@@ -45,4 +63,5 @@ navBar_link = dict(
         "color": TextColor.PRIMARY.value,
     },
 )
+
 

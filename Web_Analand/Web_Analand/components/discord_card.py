@@ -20,7 +20,7 @@ def discord_card(title:str, invitation_url:str)->rx.components:
                     color= DISCORD_COLOR
                 ),
                 rx.text(
-                    "Nuestro Discord",
+                    "¡Nuestro Discord!",
                     font_size= Size.DEFAULT.value,
                     color= TextColor.PRIMARY.value
                 ),
@@ -60,6 +60,12 @@ def discord_card(title:str, invitation_url:str)->rx.components:
                 ),
                 padding_left= Size.DEFAULT.value
             ),
+            rx.text(
+                "¡Únete a la comunidad!",
+                color= TextColor.PRIMARY.value,
+                font_weight= FontWeight.LIGHT_EXTRA.value,
+                padding_top= Size.SMALL.value
+            ),
             width= "100%",
             align_items= "start"
         ),
@@ -68,7 +74,6 @@ def discord_card(title:str, invitation_url:str)->rx.components:
         background_color= "rgba(0, 0, 0, 0.3)",
         padding= Size.DEFAULT.value,
         padding_right= Size.MEDIUM.value,
-        min_width= "15%",
         height= "100%",
         border_radius= Size.SMALL.value,
         border= f"2px solid {DISCORD_COLOR}",

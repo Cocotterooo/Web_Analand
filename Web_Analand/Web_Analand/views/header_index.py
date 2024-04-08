@@ -10,6 +10,7 @@ def header_index() -> rx.components:
     return rx.flex(
         rx.text(
             "BIENVENIDO A ",
+            text_align="center",
             letter_spacing="0.1em",
             font_size=Size.LARGE.value,
             color="white",
@@ -18,6 +19,7 @@ def header_index() -> rx.components:
         ),
         rx.text(
             "ANALAND SUPER™",
+            text_align="center",
             letter_spacing="0.1em",
             font_size=Size.LARGE.value,
             color="white",
@@ -35,14 +37,16 @@ def header_index() -> rx.components:
             font_style="italic",
             font_weight="200"
         ),
-        rx.hstack(
+        rx.flex(
             server_state(SERVER_IP_PRIMARY, SERVER_IP_PRIMARY),
             discord_card("Nuestro Discord", DISCORD_URL),
-            margin_top="10%",
-            justify="center",  
-            spacing='4',
-            width="100%"
+            width= "100%",
+            margin_top= "8%",
+            justify= "center",
+            spacing= '4',
+            flex_direction= ["column", "row"]
         ),
+        padding= Size.DEFAULT.value,
         direction="column",     # Sets the direction of main axis to column
         align="center",         # Centers along the cross axis (horizontal centering)
         justify="center",       # Centers along the main axis (vertical centering)
