@@ -4,8 +4,6 @@
 import { Fragment, useContext } from "react"
 import { EventLoopContext } from "/utils/context"
 import { Event, getBackendURL, isTrue } from "/utils/state"
-import { WifiOffIcon as LucideWifiOffIcon } from "lucide-react"
-import { keyframes } from "@emotion/react"
 import { Dialog as RadixThemesDialog, Text as RadixThemesText } from "@radix-ui/themes"
 import env from "/env.json"
 import Error from "next/error"
@@ -14,23 +12,28 @@ import NextHead from "next/head"
 
 
 
+<<<<<<< HEAD
 export function Fragment_34f041f6aae0b1134e0b2a186d19d162 () {
   const [addEvents, connectErrors] = useContext(EventLoopContext);
 
+=======
+export function Fragment_1762bb90abdb81b879b2a22edbbe01a1 () {
+  const [addEvents, connectError] = useContext(EventLoopContext);
+>>>>>>> 577110be3a097b7c877ead6efd224bbba9e35780
 
 
   return (
     <Fragment>
-  {isTrue(connectErrors.length >= 2) ? (
+  {isTrue(connectError !== null) ? (
   <Fragment>
-  <RadixThemesDialog.Root css={{"zIndex": 9999}} open={connectErrors.length >= 2}>
+  <RadixThemesDialog.Root open={connectError !== null}>
   <RadixThemesDialog.Content>
   <RadixThemesDialog.Title>
   {`Connection Error`}
 </RadixThemesDialog.Title>
   <RadixThemesText as={`p`}>
   {`Cannot connect to server: `}
-  {(connectErrors.length > 0) ? connectErrors[connectErrors.length - 1].message : ''}
+  {(connectError !== null) ? connectError.message : ''}
   {`. Check if server is reachable at `}
   {getBackendURL(env.EVENT).href}
 </RadixThemesText>
@@ -44,6 +47,7 @@ export function Fragment_34f041f6aae0b1134e0b2a186d19d162 () {
   )
 }
 
+<<<<<<< HEAD
 const pulse = keyframes`
     0% {
         opacity: 0;
@@ -72,17 +76,23 @@ export function Fragment_3ea1a0318ded176a3888f943242093c6 () {
   )
 }
 
+=======
+>>>>>>> 577110be3a097b7c877ead6efd224bbba9e35780
 export default function Component() {
   const routeNotFound = useClientSideRouting()
 
   return (
     <Fragment>
+<<<<<<< HEAD
   <Fragment>
   <div css={{"position": "fixed", "width": "100vw", "height": "0"}}>
   <Fragment_3ea1a0318ded176a3888f943242093c6/>
 </div>
   <Fragment_34f041f6aae0b1134e0b2a186d19d162/>
 </Fragment>
+=======
+  <Fragment_1762bb90abdb81b879b2a22edbbe01a1/>
+>>>>>>> 577110be3a097b7c877ead6efd224bbba9e35780
   <Fragment>
   {isTrue(routeNotFound) ? (
   <Fragment>

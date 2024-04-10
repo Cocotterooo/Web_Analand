@@ -11,7 +11,7 @@ import "@radix-ui/themes/styles.css"
 import { Fragment } from "react"
 
 
-import { EventLoopProvider, StateProvider, defaultColorMode } from "/utils/context.js";
+import { EventLoopProvider, StateProvider } from "/utils/context.js";
 import { ThemeProvider } from 'next-themes'
 
 
@@ -36,7 +36,7 @@ function AppWrap({children}) {
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider defaultTheme={ defaultColorMode } storageKey="chakra-ui-color-mode" attribute="class">
+    <ThemeProvider defaultTheme="light" storageKey="chakra-ui-color-mode" attribute="class">
       <AppWrap>
         <StateProvider>
           <EventLoopProvider>
