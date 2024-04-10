@@ -1,9 +1,9 @@
 @keyframes blinker {
-    50% { opacity: 0; }
+    50% { opacity: 0.5; }
 }
 
 .blink {
-    animation: blinker 1.5s linear infinite;
+    animation: blinker 2s linear infinite;
 }
 
 .primary_color_svg {

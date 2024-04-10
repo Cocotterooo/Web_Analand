@@ -1,5 +1,4 @@
 import reflex as rx
-import reflex.components.radix.themes as rdxt
 #utils:
 from Web_Analand import utils
 
@@ -35,28 +34,29 @@ class IndexState(rx.State):
     #on_load=[IndexState.get_discord_info]
 )
 def index():
-    return rx.chakra.vstack(
+    return rx.vstack(
         # Background image with dark overlay style
-            rx.box(
-                top_navbar(),
-                header_index(),
-                border_bottom= f"1px solid {Color.ACCENT.value}",
-                style={
-                    "background": "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/galeria/cueva_elevador.png') center/cover no-repeat",
-                    "background_attachment": "fixed", # Da el efecto de "persiana" al hacer scroll
-                    "background_size":["cover", "cover", "cover", "cover", "cover"],
-                    "background_position":["center", "center", "center", "center", "center"],
-                    "background_repeat":["no-repeat", "no-repeat", "no-repeat", "no-repeat", "no-repeat"],
-                    "width": "100%",
-                    "height": "100%",
-                }
-            ),
-            rx.flex(
-                focus_info(),
-                direction="column",
-                align="center",
-                justify="center",
-                width="100%",
-            ),
-            background_color= Color.PRIMARY.value,
+        rx.box(
+            top_navbar(),
+            header_index(),
+            border_bottom= f"1px solid {Color.ACCENT.value}",
+            style={
+                "background": "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/galeria/cueva_elevador.png') center/cover no-repeat",
+                "background_attachment": "fixed", # Da el efecto de "persiana" al hacer scroll
+                "background_size":["cover", "cover", "cover", "cover", "cover"],
+                "background_position":["center", "center", "center", "center", "center"],
+                "background_repeat":["no-repeat", "no-repeat", "no-repeat", "no-repeat", "no-repeat"],
+                "width": "100%",
+                "height": "100%",
+                "margin_bottom": f"{Size.MEDIUM.value}"
+            }
+        ),
+        rx.flex(
+            focus_info(),
+            direction="column",
+            align="center",
+            justify="center",
+            width="100%",
+        ),
+        background_color= Color.PRIMARY.value
     )

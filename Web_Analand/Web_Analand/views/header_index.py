@@ -7,44 +7,50 @@ from Web_Analand.components.discord_card import discord_card
 from Web_Analand.constants import SERVER_IP_PRIMARY, DISCORD_URL
 
 def header_index() -> rx.components:    
-    return rx.flex(
-        rx.text(
-            "BIENVENIDO A ",
-            text_align="center",
-            letter_spacing="0.1em",
-            font_size=Size.LARGE.value,
+    return rx.vstack(
+        rx.vstack(
+            rx.text(
+                "BIENVENIDO A ",
+                letter_spacing="0.1em",
+                font_size=Size.LARGE.value,
+                font_family=Font.TITLE.value,
+                font_weight="300",
+                text_align="center"
+            ),
+            rx.text(
+                "ANALAND SUPER™",
+                letter_spacing="0.1em",
+                font_size=Size.LARGE.value,
+                font_family=Font.TITLE.value,
+                font_weight="400",
+                text_align="center"
+            ),
+            rx.text(
+                "TU DIVERSIÓN, ES NUESTRA PASIÓN EN CADA DETALLE",
+                margin_top=Size.BIG.value,
+                letter_spacing="0.1em",
+                font_size=Size.BIG.value,
+                font_family=Font.TITLE.value,
+                font_style="italic",
+                font_weight="200",
+                text_align="center"
+            ),
             color="white",
-            font_family=Font.TITLE.value,
-            font_weight="300"
+            align="center",
+            justify="center",
         ),
-        rx.text(
-            "ANALAND SUPER™",
-            text_align="center",
-            letter_spacing="0.1em",
-            font_size=Size.LARGE.value,
-            color="white",
-            font_family=Font.TITLE.value,
-            font_weight="400"
+        rx.tablet_and_desktop(
+            rx.flex(
+                server_state(SERVER_IP_PRIMARY, SERVER_IP_PRIMARY),
+                discord_card("Nuestro Discord", DISCORD_URL),
+                margin_top= Size.EXTRA_LARGE.value,
+                justify= "center",
+                spacing= '4',
+            ),
         ),
-        rx.text(
-            "TU DIVERSIÓN, ES NUESTRA PASIÓN EN CADA DETALLE",
-            text_align="center",
-            margin_top=Size.BIG.value,
-            letter_spacing="0.1em",
-            font_size=Size.BIG.value,
-            color="white",
-            font_family=Font.TITLE.value,
-            font_style="italic",
-            font_weight="200"
-        ),
-        rx.flex(
+        rx.mobile_only(
             server_state(SERVER_IP_PRIMARY, SERVER_IP_PRIMARY),
-            discord_card("Nuestro Discord", DISCORD_URL),
-            width= "100%",
-            margin_top= "8%",
-            justify= "center",
-            spacing= '4',
-            flex_direction= ["column", "row"]
+            margin_top= Size.LARGE.value,
         ),
         padding= Size.DEFAULT.value,
         direction="column",     # Sets the direction of main axis to column
