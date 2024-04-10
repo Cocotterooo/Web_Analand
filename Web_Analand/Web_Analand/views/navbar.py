@@ -11,9 +11,9 @@ from Web_Analand.components.link_buttom_navbar import link_buttom_navbar
 from Web_Analand.components.item_dropdown_menu import item_dropdown_menu
 
 def top_navbar(background_color:str=Color.PRIMARY.value) -> rx.components:
-    return rx.chakra.hstack(
+    return rx.hstack(
         logotipo(),
-        rx.chakra.spacer(),
+        rx.spacer(),
         rx.tablet_and_desktop(
             rx.hstack(
                 link_buttom_navbar("Inicio", "/"),
@@ -22,7 +22,7 @@ def top_navbar(background_color:str=Color.PRIMARY.value) -> rx.components:
                 link_buttom_navbar("Reglas", "/"),
                 link_buttom_navbar("Soporte", "/"),
                 link_buttom_navbar("Nosotros", "/"),
-                rx.chakra.link(
+                rx.link(
                     "Iniciar Sesión",
                     href= "/",
                     style= navBar_link,
@@ -36,6 +36,7 @@ def top_navbar(background_color:str=Color.PRIMARY.value) -> rx.components:
                         "border": f"1px solid {TextColor.ACCENT.value}",
                     }
                 ),
+                align= "center",
                 spacing= "5"
             )
         ),
@@ -71,11 +72,12 @@ def top_navbar(background_color:str=Color.PRIMARY.value) -> rx.components:
             )
         ),
         border_top= f"1px solid {Color.ACCENT.value}",
-        bg=background_color,
-        position="sticky",
-        padding_right=Size.BIG.value,
-        padding_y=Size.TINY.value,
-        z_index="999",
-        top="0",
-        width="100%"
+        bg= background_color,
+        position= "sticky",
+        padding_right= Size.BIG.value,
+        padding_y= Size.TINY.value,
+        z_index= "999",
+        top= "0",
+        width="100%",
+        align= "center"
     )

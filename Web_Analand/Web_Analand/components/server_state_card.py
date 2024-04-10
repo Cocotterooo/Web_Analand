@@ -5,9 +5,9 @@ from Web_Analand.styles.colors import Color, TextColor
 from Web_Analand.styles.fonts import FontWeight
 
 def server_state(title:str, server_ip:str)->rx.components:
-    return rx.chakra.button( 
-        rx.chakra.vstack(
-            rx.chakra.hstack(
+    return rx.button( 
+        rx.vstack(
+            rx.hstack(
                 rx.lucide.icon(
                     "server",
                     style={
@@ -16,7 +16,7 @@ def server_state(title:str, server_ip:str)->rx.components:
                     },
                     color=Color.TERCIARY.value
                 ),
-                rx.chakra.text(
+                rx.text(
                     title, 
                     font_size=Size.DEFAULT.value, 
                     color=TextColor.PRIMARY.value
@@ -24,54 +24,54 @@ def server_state(title:str, server_ip:str)->rx.components:
                 width="100%",
                 padding_bottom=Size.SMALL.value
             ),
-            rx.chakra.hstack(
+            rx.hstack(
                 rx.lucide.icon(
                     "power",
                     color=TextColor.SECONDARY.value
                 ),
-                rx.chakra.span(
+                rx.text(
                     "Estado:",
                     color=TextColor.SECONDARY.value,
                     font_weight= FontWeight.LIGHT_EXTRA.value
                 ),
-                #rx.chakra.badge(
+                #rx.badge(
                 #    "Conectado", variant="solid", color_scheme="green"
                 #),
-                rx.chakra.badge(
+                rx.badge(
                     "Desconectado", variant="solid", color_scheme="red"
                 ),
-                #rx.chakra.badge(
+                #rx.badge(
                 #    "Encendiendo...", variant="solid", color_scheme="yellow"
                 #),
                 padding_left=Size.DEFAULT.value
             ),
-            rx.chakra.hstack(
+            rx.hstack(
                 rx.lucide.icon(
                     "user-round",
                     color=TextColor.SECONDARY.value
                 ),
-                rx.chakra.span(
+                rx.text(
                     "Jugadores:",
                     color=TextColor.SECONDARY.value,
                     font_weight= FontWeight.LIGHT_EXTRA.value
                 ),
-                rx.chakra.span(
+                rx.text(
                     "0",
                     color= Color.ACCENT.value
                 ),
                 padding_left=Size.DEFAULT.value
             ),
-            rx.chakra.hstack(
+            rx.hstack(
                 rx.lucide.icon(
                     "activity",
                     color=TextColor.SECONDARY.value
                     ),
-                rx.chakra.span(
+                rx.text(
                     "Actividad:",
                     color=TextColor.SECONDARY.value,
                     font_weight= FontWeight.LIGHT_EXTRA.value
                 ),
-                rx.chakra.span(
+                rx.text(
                     "0%",
                     color= Color.ACCENT.value
                 ),
@@ -83,7 +83,7 @@ def server_state(title:str, server_ip:str)->rx.components:
         background_color= "rgba(0, 0, 0, 0.3)",
         padding=Size.DEFAULT.value,
         padding_right=Size.MEDIUM.value,
-        height="auto",
+        height="100%",
         border_radius=Size.SMALL.value,
         border=f"2px solid {Color.ACCENT.value}",
         on_click=rx.set_clipboard(server_ip),
