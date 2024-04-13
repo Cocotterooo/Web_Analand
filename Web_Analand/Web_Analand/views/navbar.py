@@ -9,36 +9,33 @@ from Web_Analand.styles.colors import TextColor
 from Web_Analand.components.logotipo import logotipo
 from Web_Analand.components.link_buttom_navbar import link_buttom_navbar
 from Web_Analand.components.item_dropdown_menu import item_dropdown_menu
+from Web_Analand.components.discord.discord_buttom import discord_buttom
+# Constants:
+from Web_Analand.constants import DISCORD_URL
 
 def top_navbar(background_color:str=Color.PRIMARY.value) -> rx.components:
     return rx.hstack(
-        logotipo(),
+        rx.box(
+            logotipo(),
+            margin_y= Size.TINY.value,
+            margin_x= Size.SMALL.value,
+        ),
         rx.spacer(),
         rx.tablet_and_desktop(
             rx.hstack(
-                link_buttom_navbar("Inicio", "/"),
-                link_buttom_navbar("Tienda", "/"),
-                link_buttom_navbar("Blog", "/"),
-                link_buttom_navbar("Reglas", "/"),
-                link_buttom_navbar("Soporte", "/"),
-                link_buttom_navbar("Nosotros", "/"),
-                rx.link(
-                    "Iniciar Sesión",
-                    href= "/",
-                    style= navBar_link,
-                    fontWeight= FontWeight.LIGHT.value,
-                    border= f"1px solid {TextColor.SECONDARY.value}",
-                    border_radius= Size.TINY.value,
-                    padding_x= Size.TINY.value,
-                    margin_left= Size.BIG.value,
-                    _hover= {
-                        "color": TextColor.ACCENT.value,
-                        "border": f"1px solid {TextColor.ACCENT.value}",
-                    }
-                ),
+                rx.spacer(),
+                link_buttom_navbar("Inicio", "/", "/icons/context/sec_color/home.svg", "Icono de inicio"),
+                link_buttom_navbar("Tienda", "/", "/icons/context/sec_color/store.svg", "Icono de tienda"),
+                link_buttom_navbar("Blog", "/", "/icons/context/sec_color/book-marked.svg", "Icono de blog"),
+                link_buttom_navbar("Nosotros", "/", "/icons/context/sec_color/users-round.svg", "Icono de nosotros"),
+                link_buttom_navbar("Normas", "/", "/icons/context/sec_color/scale.svg", "Icono de reglas"),
                 align= "center",
                 spacing= "5"
             )
+        ),
+        rx.mobile_only(
+            discord_buttom(DISCORD_URL),
+            margin_x= Size.MEDIUM.value,
         ),
         rx.mobile_only(
             rx.menu.root(

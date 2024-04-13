@@ -1,12 +1,9 @@
 import { createContext, useContext, useMemo, useReducer, useState } from "react"
 import { applyDelta, Event, hydrateClientStorage, useEventLoop, refs } from "/utils/state.js"
 
-<<<<<<< HEAD
 export const initialState = {"state": {"is_hydrated": false, "router": {"session": {"client_token": "", "client_ip": "", "session_id": ""}, "headers": {"host": "", "origin": "", "upgrade": "", "connection": "", "pragma": "", "cache_control": "", "user_agent": "", "sec_websocket_version": "", "sec_websocket_key": "", "sec_websocket_extensions": "", "accept_encoding": "", "accept_language": ""}, "page": {"host": "", "path": "", "raw_path": "", "full_path": "", "full_raw_path": "", "params": {}}}}, "state.index_state": {}, "state.update_vars_internal_state": {}, "state.on_load_internal_state": {}}
-=======
-export const initialState = {"state": {"is_hydrated": false, "router": {"session": {"client_token": "", "client_ip": "", "session_id": ""}, "headers": {"host": "", "origin": "", "upgrade": "", "connection": "", "pragma": "", "cache_control": "", "user_agent": "", "sec_websocket_version": "", "sec_websocket_key": "", "sec_websocket_extensions": "", "accept_encoding": "", "accept_language": ""}, "page": {"host": "", "path": "", "raw_path": "", "full_path": "", "full_raw_path": "", "params": {}}}}, "state.index_state": {}}
->>>>>>> 577110be3a097b7c877ead6efd224bbba9e35780
 
+export const defaultColorMode = "light"
 export const ColorModeContext = createContext(null);
 export const UploadFilesContext = createContext(null);
 export const DispatchContext = createContext(null);
@@ -19,10 +16,34 @@ export const StateContexts = {
 export const EventLoopContext = createContext(null);
 export const clientStorage = {"cookies": {}, "local_storage": {}}
 
-export const onLoadInternalEvent = () => [Event('state.on_load_internal')]
+export const state_name = "state"
 
+// Theses events are triggered on initial load and each page navigation.
+export const onLoadInternalEvent = () => {
+    const internal_events = [];
+
+    // Get tracked cookie and local storage vars to send to the backend.
+    const client_storage_vars = hydrateClientStorage(clientStorage);
+    // But only send the vars if any are actually set in the browser.
+    if (client_storage_vars && Object.keys(client_storage_vars).length !== 0) {
+        internal_events.push(
+            Event(
+                'state.update_vars_internal_state.update_vars_internal',
+                {vars: client_storage_vars},
+            ),
+        );
+    }
+
+    // `on_load_internal` triggers the correct on_load event(s) for the current page.
+    // If the page does not define any on_load event, this will just set `is_hydrated = true`.
+    internal_events.push(Event('state.on_load_internal_state.on_load_internal'));
+
+    return internal_events;
+}
+
+// The following events are sent when the websocket connects or reconnects.
 export const initialEvents = () => [
-    Event('state.hydrate', hydrateClientStorage(clientStorage)),
+    Event('state.hydrate'),
     ...onLoadInternalEvent()
 ]
 
@@ -44,13 +65,13 @@ export function UploadFilesProvider({ children }) {
 
 export function EventLoopProvider({ children }) {
   const dispatch = useContext(DispatchContext)
-  const [addEvents, connectError] = useEventLoop(
+  const [addEvents, connectErrors] = useEventLoop(
     dispatch,
     initialEvents,
     clientStorage,
   )
   return (
-    <EventLoopContext.Provider value={[addEvents, connectError]}>
+    <EventLoopContext.Provider value={[addEvents, connectErrors]}>
       {children}
     </EventLoopContext.Provider>
   )
@@ -78,11 +99,8 @@ export function StateProvider({ children }) {
       <DispatchContext.Provider value={dispatchers}>
         {children}
       </DispatchContext.Provider>
-<<<<<<< HEAD
     </StateContexts.state__on_load_internal_state.Provider>
     </StateContexts.state__update_vars_internal_state.Provider>
-=======
->>>>>>> 577110be3a097b7c877ead6efd224bbba9e35780
     </StateContexts.state__index_state.Provider>
     </StateContexts.state.Provider>
   )

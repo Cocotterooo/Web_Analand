@@ -4,7 +4,7 @@ from Web_Analand.styles.fonts import Font, FontWeight
 from Web_Analand.styles.colors import TextColor
 
 def title(text:str = "Hello World", color:str = TextColor.PRIMARY.value) -> rx.components:
-    return rx.chakra.text(
+    return rx.text(
         text, 
         font_family=Font.TITLE.value,
         font_weight=FontWeight.MEDIUM.value,
@@ -14,7 +14,7 @@ def title(text:str = "Hello World", color:str = TextColor.PRIMARY.value) -> rx.c
     )
 
 def subtitle(text:str = "Hello World", color:str = TextColor.PRIMARY.value) -> rx.Component:
-    return rx.chakra.text(
+    return rx.text(
         text,
         font_family=Font.TITLE.value,
         font_weight=FontWeight.LIGHT.value,

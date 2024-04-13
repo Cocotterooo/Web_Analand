@@ -6,7 +6,7 @@ class Color(Enum):
     TERCIARY = "#fff"
     ACCENT = "#FFCC00"
     NONE = "transparent"
-    PURPLE_LIGHT = "#D3BAEB"
+    DISCORD = "#5865F2"
 
 class TextColor(Enum):
     PRIMARY = "#fff"

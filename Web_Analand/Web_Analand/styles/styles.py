@@ -46,15 +46,26 @@ BASE_STYLE = {
     rx.menu.content: {
         "background_color": Color.PRIMARY.value,
         "border": f"2px solid {Color.SECONDARY.value}"
+    },
+    rx.hover_card.content: {
+        "font_size": Size.MEDIUM_SMALL.value,
+        "color": TextColor.PRIMARY.value,
+        "background_color": Color.PRIMARY.value,
+        "border": f"2px solid {Color.SECONDARY.value}",
+        "border_right": f"2px solid {Color.ACCENT.value}",
+        "width": "100%",
+        "align": "center",
+        "padding": Size.DEFAULT.value
     }
 }
 
 
 # Custom Components Styles:
+
 navBar_link = dict(
     fontFamily= Font.TITLE.value,
     letter_spacing= "0.05em",
-    fontWeight= "250",
+    fontWeight= "350",
     color= TextColor.SECONDARY.value,
     font_size= Size.MEDIUM.value,
     transition= "0.4s",
@@ -62,6 +73,13 @@ navBar_link = dict(
         "underline": "none",
         "color": TextColor.PRIMARY.value,
     },
+)
+
+title_big = dict(
+    letter_spacing= "0.1em",
+    font_size= Size.LARGE.value,
+    font_family= Font.TITLE.value,
+    text_align= "center"
 )
 
 

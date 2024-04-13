@@ -41,7 +41,7 @@ def index():
             header_index(),
             border_bottom= f"1px solid {Color.ACCENT.value}",
             style={
-                "background": "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/galeria/cueva_elevador.png') center/cover no-repeat",
+                "background": "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/galeria/galeria_webp/cueva_elevador.webp') center/cover no-repeat",
                 "background_attachment": "fixed", # Da el efecto de "persiana" al hacer scroll
                 "background_size":["cover", "cover", "cover", "cover", "cover"],
                 "background_position":["center", "center", "center", "center", "center"],
@@ -51,9 +51,8 @@ def index():
                 "margin_bottom": f"{Size.MEDIUM.value}"
             }
         ),
-        rx.flex(
+        rx.vstack(
             focus_info(),
-            direction="column",
             align="center",
             justify="center",
             width="100%",
