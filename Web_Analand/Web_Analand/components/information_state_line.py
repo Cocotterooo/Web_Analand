@@ -34,7 +34,7 @@ def information_state_line(
             ),
             rx.text(
                 info,
-                font_size= Size.DEFAULT.value,
+                font_size= Size.MEDIUM.value,
                 color= color_info
             )
         ),

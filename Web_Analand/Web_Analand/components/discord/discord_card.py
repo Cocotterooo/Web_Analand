@@ -1,16 +1,20 @@
 import reflex as rx
 
 # Styles:
-from Web_Analand.styles.styles import Size 
+from Web_Analand.styles.styles import Size, card_info_index
 from Web_Analand.styles.colors import Color, TextColor
 from Web_Analand.styles.fonts import FontWeight
 # Components:
 from Web_Analand.components.information_state_line import information_state_line
 
 
-DISCORD_COLOR = "#5865F2"
+# region STATIC
 
-def discord_card(title:str, invitation_url:str) -> rx.components:
+def discord_card(invitation_url:str,
+                discord_total_members:int, 
+                discord_online_members:int,
+                color:str= Color.DISCORD.value, 
+                ) -> rx.components:
     return rx.hover_card.root(
         rx.hover_card.trigger(
             rx.button(
@@ -32,15 +36,15 @@ def discord_card(title:str, invitation_url:str) -> rx.components:
                                     title= "Miembros:", 
                                     icon= "/icons/context/sec_color/users-round.svg", 
                                     alt= "Icono de Usuarios", 
-                                    info= "N/A",
-                                    color_info= Color.DISCORD.value
+                                    info= discord_total_members,
+                                    color_info= color
                                 ),
                                 information_state_line(
-                                    title= "Staff Online:", 
-                                    icon= "/icons/context/sec_color/shield.svg", 
-                                    alt= "Icono de jugadores", 
-                                    info= "N/A",
-                                    color_info= Color.DISCORD.value
+                                    title= "Online:", 
+                                    icon= "/icons/context/sec_color/unplug.svg", 
+                                    alt= "Icono de un enchufe", 
+                                    info= discord_online_members,
+                                    color_info= color
                                 ),
                                 width= "100%",
                                 align= "start",
@@ -66,20 +70,24 @@ def discord_card(title:str, invitation_url:str) -> rx.components:
                     padding_right= Size.MEDIUM.value,
                     height= "100%"
                 ),
-                _hover= {
-                    "background_color": "rgba(0, 0, 0, 0.65)"
-                },
-                transition= "1s",
-                background_color= "rgba(0, 0, 0, 0.3)",
-                border_radius=Size.SMALL.value,
-                border= f"2px solid {Color.DISCORD.value}",
-                padding_x= Size.ZERO.value,
-                height= "100%"
+                style= card_info_index,
+                border_color= color,
+                padding_x= Size.ZERO.value # for the link component
             )
         ),
         rx.hover_card.content(
             rx.text(
-                "¡Al hacer click serás redirigido a nuestro Discord!"
-            )
+                "¡Al hacer click serás redirigido ",
+                rx.text.strong(
+                    'redirigido'
+                ),
+                ' a nuestro ',
+                rx.text.strong(
+                    'Discord',
+                    color= color
+                ),
+                '!' 
+            ),
+            border_right= f"2px solid {color} !important",
         )
     )

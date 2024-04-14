@@ -1,12 +1,14 @@
 import reflex as rx
 
 # Styles:
-from Web_Analand.styles.styles import Size 
+from Web_Analand.styles.styles import Size, card_info_index 
 from Web_Analand.styles.colors import Color, TextColor
 from Web_Analand.styles.fonts import FontWeight
 # Components:
 from Web_Analand.components.information_state_line import information_state_line
 
+
+# region STATIC
 def server_state(title:str, server_ip:str)->rx.components:
     return rx.hover_card.root(
         rx.hover_card.trigger(
@@ -77,27 +79,21 @@ def server_state(title:str, server_ip:str)->rx.components:
                     ),
                 ),
                 on_click=rx.set_clipboard(server_ip), # Copia la ip del servidor al portapapeles
-                _hover={
-                    "background_color": "rgba(0, 0, 0, 0.65)",
-                    "cursor": "pointer"
-                },
-                transition= "1s",
-                border= f"2px solid {Color.ACCENT.value}",
-                border_radius=Size.SMALL.value,
-                background_color= "rgba(0, 0, 0, 0.3)",
-                padding= Size.DEFAULT.value,
-                padding_right= Size.MEDIUM.value,
-                height= "100%"
+                style= card_info_index
             )
         ),
         rx.hover_card.content(
             rx.text(
-                f"Al hacer click se copiará la IP: ", 
+                f"¡Al hacer click se copiará la IP: ", 
                 rx.text.strong(
                     server_ip,
                     color= TextColor.ACCENT.value
-                    ), 
-                " en tu portapapeles"
+                ), 
+                " en tu ",
+                rx.text.strong(
+                    "portapapeles"
+                ),
+                '!'
             )
         )
     )

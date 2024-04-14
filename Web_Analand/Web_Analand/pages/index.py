@@ -13,41 +13,35 @@ from Web_Analand.views.header_index import header_index
 from Web_Analand.views.focus_info import focus_info
 #constants:
 from Web_Analand.constants import DISCORD_GUILD_ID
-#api:
-#from Web_Analand.api.discord import discord
-
-class IndexState(rx.State):
-    pass
-    #discord_info: dict
-#MTE3OTE4MzE5MjkxNDI3MjI3Ng.Ghrbqz.4spjgsHDDDCOKyFKRO6NtgzxjQMfmG5z4xgSWo
-
-
-    #async def get_discord_info(self):
-        #self.discord_info = None
-        #discord_info = discord("TOKEN", DISCORD_GUILD_ID)
+#STATE:
+from Web_Analand.state.PageState import PageState
 
 @rx.page(
     title=utils.index_title,
     description=utils.index_description,
     image=utils.preview,
     #meta=utils.index_meta,
-    #on_load=[IndexState.get_discord_info]
+    on_load=PageState.discord_num_members
 )
 def index():
     return rx.vstack(
+        top_navbar(),
         # Background image with dark overlay style
         rx.box(
-            top_navbar(),
-            header_index(),
+            header_index(
+                discord_total_members= PageState.total_members,
+                discord_online_members= PageState.online_members
+            ),
+            #rx.text(IndexState.say_hello, font_size= Size.MEDIUM.value, color= TextColor.PRIMARY.value),
             border_bottom= f"1px solid {Color.ACCENT.value}",
             style={
-                "background": "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/galeria/galeria_webp/cueva_elevador.webp') center/cover no-repeat",
+                "background": "linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url('/galeria/galeria_webp/cueva_elevador.webp') center/cover no-repeat",
                 "background_attachment": "fixed", # Da el efecto de "persiana" al hacer scroll
                 "background_size":["cover", "cover", "cover", "cover", "cover"],
                 "background_position":["center", "center", "center", "center", "center"],
                 "background_repeat":["no-repeat", "no-repeat", "no-repeat", "no-repeat", "no-repeat"],
                 "width": "100%",
-                "height": "100%",
+                "height": "100%", 
                 "margin_bottom": f"{Size.MEDIUM.value}"
             }
         ),
@@ -57,5 +51,6 @@ def index():
             justify="center",
             width="100%",
         ),
-        background_color= Color.PRIMARY.value
+        background_color= Color.PRIMARY.value,
+        spacing= "0"
     )
