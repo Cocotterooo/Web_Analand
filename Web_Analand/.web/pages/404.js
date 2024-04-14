@@ -14,7 +14,6 @@ import NextHead from "next/head"
 
 
 
-<<<<<<< HEAD
 export function Fragment_34f041f6aae0b1134e0b2a186d19d162 () {
   const [addEvents, connectErrors] = useContext(EventLoopContext);
 
