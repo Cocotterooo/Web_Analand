@@ -1,15 +1,17 @@
 import { createContext, useContext, useMemo, useReducer, useState } from "react"
 import { applyDelta, Event, hydrateClientStorage, useEventLoop, refs } from "/utils/state.js"
 
-export const initialState = {"state": {"is_hydrated": false, "router": {"session": {"client_token": "", "client_ip": "", "session_id": ""}, "headers": {"host": "", "origin": "", "upgrade": "", "connection": "", "pragma": "", "cache_control": "", "user_agent": "", "sec_websocket_version": "", "sec_websocket_key": "", "sec_websocket_extensions": "", "accept_encoding": "", "accept_language": ""}, "page": {"host": "", "path": "", "raw_path": "", "full_path": "", "full_raw_path": "", "params": {}}}}, "state.page_state": {"num_members": [], "online_members": 0, "total_members": 0}, "state.on_load_internal_state": {}, "state.update_vars_internal_state": {}}
+<<<<<<< HEAD
+export const initialState = {"state": {"is_hydrated": false, "router": {"session": {"client_token": "", "client_ip": "", "session_id": ""}, "headers": {"host": "", "origin": "", "upgrade": "", "connection": "", "pragma": "", "cache_control": "", "user_agent": "", "sec_websocket_version": "", "sec_websocket_key": "", "sec_websocket_extensions": "", "accept_encoding": "", "accept_language": ""}, "page": {"host": "", "path": "", "raw_path": "", "full_path": "", "full_raw_path": "", "params": {}}}}, "state.index_state": {}, "state.update_vars_internal_state": {}, "state.on_load_internal_state": {}}
+=======
+export const initialState = {"state": {"is_hydrated": false, "router": {"session": {"client_token": "", "client_ip": "", "session_id": ""}, "headers": {"host": "", "origin": "", "upgrade": "", "connection": "", "pragma": "", "cache_control": "", "user_agent": "", "sec_websocket_version": "", "sec_websocket_key": "", "sec_websocket_extensions": "", "accept_encoding": "", "accept_language": ""}, "page": {"host": "", "path": "", "raw_path": "", "full_path": "", "full_raw_path": "", "params": {}}}}, "state.index_state": {}}
+>>>>>>> 577110be3a097b7c877ead6efd224bbba9e35780
 
-export const defaultColorMode = "light"
 export const ColorModeContext = createContext(null);
 export const UploadFilesContext = createContext(null);
 export const DispatchContext = createContext(null);
 export const StateContexts = {
   state: createContext(null),
-  state__page_state: createContext(null),
   state__on_load_internal_state: createContext(null),
   state__update_vars_internal_state: createContext(null),
 }
@@ -79,13 +81,11 @@ export function EventLoopProvider({ children }) {
 
 export function StateProvider({ children }) {
   const [state, dispatch_state] = useReducer(applyDelta, initialState["state"])
-  const [state__page_state, dispatch_state__page_state] = useReducer(applyDelta, initialState["state.page_state"])
   const [state__on_load_internal_state, dispatch_state__on_load_internal_state] = useReducer(applyDelta, initialState["state.on_load_internal_state"])
   const [state__update_vars_internal_state, dispatch_state__update_vars_internal_state] = useReducer(applyDelta, initialState["state.update_vars_internal_state"])
   const dispatchers = useMemo(() => {
     return {
       "state": dispatch_state,
-      "state.page_state": dispatch_state__page_state,
       "state.on_load_internal_state": dispatch_state__on_load_internal_state,
       "state.update_vars_internal_state": dispatch_state__update_vars_internal_state,
     }
@@ -93,7 +93,6 @@ export function StateProvider({ children }) {
 
   return (
     <StateContexts.state.Provider value={ state }>
-    <StateContexts.state__page_state.Provider value={ state__page_state }>
     <StateContexts.state__on_load_internal_state.Provider value={ state__on_load_internal_state }>
     <StateContexts.state__update_vars_internal_state.Provider value={ state__update_vars_internal_state }>
       <DispatchContext.Provider value={dispatchers}>
@@ -101,7 +100,6 @@ export function StateProvider({ children }) {
       </DispatchContext.Provider>
     </StateContexts.state__update_vars_internal_state.Provider>
     </StateContexts.state__on_load_internal_state.Provider>
-    </StateContexts.state__page_state.Provider>
     </StateContexts.state.Provider>
   )
 }

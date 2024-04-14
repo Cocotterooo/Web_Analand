@@ -2,8 +2,8 @@
     50% { opacity: 0.5; }
 }
 
-.blink {
-    animation: blinker 2s linear infinite;
+.blink1_5 {
+    animation: blinker 1.5s linear infinite;
 }
 
 .primary_color_svg {
