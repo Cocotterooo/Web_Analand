@@ -75,11 +75,24 @@ navBar_link = dict(
     },
 )
 
+
+# Styles for the index page:
+# Title and Subtitle:
 title_big = dict(
     letter_spacing= "0.1em",
     font_size= Size.LARGE.value,
     font_family= Font.TITLE.value,
     text_align= "center"
 )
-
-
+# Card server infor and discord info:
+card_info_index = dict(
+    _hover={
+        "background_color": "rgb(0 0 0 / 65%)",
+        "cursor": "pointer"
+    },
+    transition= "1s",
+    border= f"2px solid {Color.ACCENT.value}",
+    border_radius= Size.SMALL.value,
+    background_color= "rgb(0 0 0 / 30%)",
+    height= "100%"
+)
