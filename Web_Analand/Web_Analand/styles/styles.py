@@ -91,8 +91,9 @@ card_info_index = dict(
         "cursor": "pointer"
     },
     transition= "1s",
+    background_color= "rgb(0 0 0 / 30%)",
     border= f"2px solid {Color.ACCENT.value}",
     border_radius= Size.SMALL.value,
-    background_color= "rgb(0 0 0 / 30%)",
+    padding_y= Size.DEFAULT.value,
     height= "100%"
 )

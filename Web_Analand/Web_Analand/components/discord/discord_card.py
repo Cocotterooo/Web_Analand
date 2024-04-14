@@ -72,7 +72,7 @@ def discord_card(invitation_url:str,
                 ),
                 style= card_info_index,
                 border_color= color,
-                padding_x= Size.ZERO.value # for the link component
+                padding= Size.ZERO.value # for the link component
             )
         ),
         rx.hover_card.content(

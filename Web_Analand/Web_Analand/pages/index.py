@@ -11,6 +11,7 @@ from Web_Analand.styles.fonts import Font, FontWeight
 from Web_Analand.views.navbar import top_navbar
 from Web_Analand.views.header_index import header_index
 from Web_Analand.views.focus_info import focus_info
+from Web_Analand.views.footer import footer
 #constants:
 from Web_Analand.constants import DISCORD_GUILD_ID
 #STATE:
@@ -51,6 +52,7 @@ def index():
             justify="center",
             width="100%",
         ),
+        footer(),
         background_color= Color.PRIMARY.value,
         spacing= "0"
     )

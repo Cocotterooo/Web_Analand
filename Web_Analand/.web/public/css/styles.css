@@ -13,7 +13,7 @@
     fill: #CBCBCB;
 }
 .accent_color_svg {
-    fill: #FFCC00;
+    fill: #FFCC00 !important;
 }
 
 ::-webkit-scrollbar {
