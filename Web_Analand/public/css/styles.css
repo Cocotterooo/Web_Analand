@@ -6,6 +6,10 @@
     animation: blinker 1.5s linear infinite;
 }
 
+.blink2 {
+    animation: blinker 2s linear infinite;
+}
+
 .primary_color_svg {
     fill: white;
 }
