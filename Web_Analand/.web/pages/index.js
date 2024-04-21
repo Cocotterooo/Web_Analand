@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 
-import { Fragment, useCallback, useContext } from "react"
+import { Fragment, useCallback, useContext, useEffect } from "react"
 import { EventLoopContext, StateContexts } from "/utils/context"
 import { Event, getBackendURL, isTrue } from "/utils/state"
 import { WifiOffIcon as LucideWifiOffIcon } from "lucide-react"
@@ -13,19 +13,235 @@ import NextHead from "next/head"
 
 
 
-<<<<<<< HEAD
-export function Button_f48d1daf80ba93a2a1fa35f13f10659f () {
+const pulse = keyframes`
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`
+
+
+export function Link_8642dc05dca91baec10692b1ce50132a () {
+
+
+
+  return (
+    <RadixThemesLink asChild={true} className={`primary_color_svg`} css={{"&:hover": {"class-name": "accent_color_svg"}}} target={isTrue(true) ? `_blank` : ``}>
+  <NextLink href={`https://www.instagram.com/analand_esp/`} passHref={true}>
+  <img alt={`Logotipo de Instagram`} css={{"height": "1.5em", "width": "auto"}} src={`/icons/social/instagram.svg`}/>
+</NextLink>
+</RadixThemesLink>
+  )
+}
+
+export function Link_69fd98b89a714bb8d383e0a7c3395a17 () {
+
+
+
+  return (
+    <RadixThemesLink asChild={true} className={`primary_color_svg`} css={{"&:hover": {"class-name": "accent_color_svg"}}} target={isTrue(true) ? `_blank` : ``}>
+  <NextLink href={`https://discord.gg/pZQMW64sYT`} passHref={true}>
+  <img alt={`Logotipo de Discord`} css={{"height": "1.5em", "width": "auto"}} src={`/icons/social/discord.svg`}/>
+</NextLink>
+</RadixThemesLink>
+  )
+}
+
+export function Fragment_3ea1a0318ded176a3888f943242093c6 () {
   const [addEvents, connectErrors] = useContext(EventLoopContext);
+
+
+
+  return (
+    <Fragment>
+  {isTrue(connectErrors.length > 0) ? (
+  <Fragment>
+  <LucideWifiOffIcon css={{"color": "crimson", "zIndex": 9999, "position": "fixed", "bottom": "30px", "right": "30px", "animation": `${pulse} 1s infinite`}} size={32}/>
+</Fragment>
+) : (
+  <Fragment/>
+)}
+</Fragment>
+  )
+}
+
+export function Link_9b8bbc1e59cca2def8fb110b27621503 () {
+  
+                useEffect(() => {
+                    addEvents([Event("state.page_state.get_server_status", {})])
+                    return () => {
+                        
+                    }
+                }, []);
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+  const state__page_state = useContext(StateContexts.state__page_state)
+
+
+
+  return (
+    <RadixThemesLink asChild={true} css={{"padding": "1em", "paddingRight": "1.2em", "height": "100%"}} target={isTrue(true) ? `_blank` : ``}>
+  <NextLink href={`https://discord.gg/pZQMW64sYT`} passHref={true}>
+  <RadixThemesFlex align={`start`} direction={`column`} gap={`2`}>
+  <RadixThemesFlex align={`center`} css={{"width": "100%", "paddingBottom": "0.6em"}} direction={`row`} gap={`2`}>
+  <img alt={`Logo de Discord`} css={{"height": "1.5em"}} src={`/icons/social/discord-logo-white.svg`}/>
+</RadixThemesFlex>
+  <RadixThemesBox css={{"width": "100%", "align": "center"}}>
+  <RadixThemesFlex align={`start`} css={{"width": "100%", "marginBottom": "1em", "paddingLeft": "1em"}} direction={`column`} gap={`2`}>
+  <RadixThemesFlex align={`center`} direction={`row`} gap={`2`}>
+  <img alt={`Icono de Usuarios`} src={`/icons/context/sec_color/users-round.svg`}/>
+  <RadixThemesText as={`p`} css={{"color": "#CBCBCB"}}>
+  {`Miembros:`}
+</RadixThemesText>
+  <Fragment>
+  {isTrue(false) ? (
+  <Fragment>
+  <RadixThemesBox>
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("online"))) ? (
+  <Fragment>
+  <RadixThemesBadge color={`jade`} variant={`solid`}>
+  {`Conectado`}
+</RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("offline"))) ? (
+  <Fragment>
+  <RadixThemesBadge color={`red`} variant={`solid`}>
+  {`Desconectado`}
+</RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("starting"))) ? (
+  <Fragment>
+  <RadixThemesBadge className={`blink1_5`} color={`tomato`} variant={`solid`}>
+  {`Encendiendo...`}
+</RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("desconocido"))) ? (
+  <Fragment>
+  <RadixThemesBadge className={`blink2`} color={`gray`} variant={`solid`}>
+  {`Desconocido`}
+</RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment/>
+)}
+</Fragment>
+)}
+</Fragment>
+)}
+</Fragment>
+)}
+</Fragment>
+</RadixThemesBox>
+</Fragment>
+) : (
+  <Fragment>
+  <RadixThemesText as={`p`} css={{"fontSize": "1.2em", "color": "#5865F2"}}>
+  {state__page_state.discord_total_members}
+</RadixThemesText>
+</Fragment>
+)}
+</Fragment>
+</RadixThemesFlex>
+  <RadixThemesFlex align={`center`} direction={`row`} gap={`2`}>
+  <img alt={`Icono de un enchufe`} src={`/icons/context/sec_color/unplug.svg`}/>
+  <RadixThemesText as={`p`} css={{"color": "#CBCBCB"}}>
+  {`Online:`}
+</RadixThemesText>
+  <Fragment>
+  {isTrue(false) ? (
+  <Fragment>
+  <RadixThemesBox>
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("online"))) ? (
+  <Fragment>
+  <RadixThemesBadge color={`jade`} variant={`solid`}>
+  {`Conectado`}
+</RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("offline"))) ? (
+  <Fragment>
+  <RadixThemesBadge color={`red`} variant={`solid`}>
+  {`Desconectado`}
+</RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("starting"))) ? (
+  <Fragment>
+  <RadixThemesBadge className={`blink1_5`} color={`tomato`} variant={`solid`}>
+  {`Encendiendo...`}
+</RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("desconocido"))) ? (
+  <Fragment>
+  <RadixThemesBadge className={`blink2`} color={`gray`} variant={`solid`}>
+  {`Desconocido`}
+</RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment/>
+)}
+</Fragment>
+)}
+</Fragment>
+)}
+</Fragment>
+)}
+</Fragment>
+</RadixThemesBox>
+</Fragment>
+) : (
+  <Fragment>
+  <RadixThemesText as={`p`} css={{"fontSize": "1.2em", "color": "#5865F2"}}>
+  {state__page_state.discord_online_members}
+</RadixThemesText>
+</Fragment>
+)}
+</Fragment>
+</RadixThemesFlex>
+</RadixThemesFlex>
+  <RadixThemesText align={`center`} as={`p`} className={`blink1_5`} css={{"color": "#fff", "fontSize": "1em", "fontWeight": "200"}}>
+  {`¡Únete a nuestro Discord!`}
+</RadixThemesText>
+</RadixThemesBox>
+</RadixThemesFlex>
+</NextLink>
+</RadixThemesLink>
+  )
+}
+
+export function Button_32556143d10c5d1144bab9603ff98b8a () {
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+  
+                useEffect(() => {
+                    addEvents([Event("state.page_state.get_server_status", {})])
+                    return () => {
+                        
+                    }
+                }, []);
+  const state__page_state = useContext(StateContexts.state__page_state)
 
   const on_click_a9b4a20edc8c9ec69de1d84b4ff5c3d8 = useCallback((_e) => addEvents([Event("_set_clipboard", {content:`analand.net`})], (_e), {}), [addEvents, Event])
 
 
   return (
-    <RadixThemesButton css={{"backgroundColor": "rgba(0, 0, 0, 0.3)", "padding": "1em", "paddingRight": "1.2em", "height": "100%", "borderRadius": "0.6em", "border": "2px solid #FFCC00", "&:hover": {"backgroundColor": "rgba(0, 0, 0, 0.65)"}, "transition": "1s"}} onClick={on_click_a9b4a20edc8c9ec69de1d84b4ff5c3d8}>
-  <RadixThemesFlex align={`start`} css={{"width": "100%", "alignItems": "start"}} direction={`column`} gap={`2`}>
-  <RadixThemesFlex align={`start`} css={{"width": "100%", "paddingBottom": "0.6em"}} direction={`row`} gap={`2`}>
-  <LucideServerIcon css={{"color": "#fff", "width": "2em", "height": "2em"}}/>
-  <RadixThemesText as={`p`} css={{"fontSize": "1em", "color": "#fff"}}>
+    <RadixThemesButton css={{"&:hover": {"backgroundColor": "rgb(0 0 0 / 65%)", "cursor": "pointer"}, "transition": "1s", "backgroundColor": "rgb(0 0 0 / 30%)", "border": "2px solid #FFCC00", "borderRadius": "0.6em", "paddingTop": "1em", "paddingBottom": "1em", "height": "100%"}} onClick={on_click_a9b4a20edc8c9ec69de1d84b4ff5c3d8}>
+  <RadixThemesFlex align={`start`} direction={`column`} gap={`2`}>
+  <RadixThemesFlex align={`center`} css={{"width": "100%", "paddingBottom": "0.6em"}} direction={`row`} gap={`2`}>
+  <img alt={`Icono de servidor`} src={`/icons/context/prim_color/server.svg`}/>
+  <RadixThemesText as={`p`} css={{"fontSize": "1.2em", "color": "#fff"}}>
   {`analand.net`}
 </RadixThemesText>
 </RadixThemesFlex>
@@ -39,17 +255,115 @@ export function Button_f48d1daf80ba93a2a1fa35f13f10659f () {
   <Fragment>
   {isTrue(true) ? (
   <Fragment>
-  <RadixThemesBadge className={``} color={`red`} radius={`large`} variant={`solid`}>
+  <RadixThemesBox>
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("online"))) ? (
+  <Fragment>
+  <RadixThemesBadge color={`jade`} variant={`solid`}>
+  {`Conectado`}
+</RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("offline"))) ? (
+  <Fragment>
+  <RadixThemesBadge color={`red`} variant={`solid`}>
   {`Desconectado`}
 </RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("starting"))) ? (
+  <Fragment>
+  <RadixThemesBadge className={`blink1_5`} color={`tomato`} variant={`solid`}>
+  {`Encendiendo...`}
+</RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("desconocido"))) ? (
+  <Fragment>
+  <RadixThemesBadge className={`blink2`} color={`gray`} variant={`solid`}>
+  {`Desconocido`}
+</RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment/>
+)}
+</Fragment>
+)}
+</Fragment>
+)}
+</Fragment>
+)}
+</Fragment>
+</RadixThemesBox>
+</Fragment>
+) : (
+  <Fragment>
+  <RadixThemesText as={`p`} css={{"fontSize": "1.2em", "color": "#fff"}}>
+  {`N/A`}
+</RadixThemesText>
+</Fragment>
+)}
+</Fragment>
 </RadixThemesFlex>
   <RadixThemesFlex align={`center`} direction={`row`} gap={`2`}>
   <img alt={`Icono de jugadores`} src={`/icons/context/sec_color/users-round.svg`}/>
   <RadixThemesText as={`p`} css={{"color": "#CBCBCB"}}>
   {`Jugadores:`}
 </RadixThemesText>
-  <RadixThemesText as={`p`} css={{"color": "#FFCC00"}}>
-  {`0`}
+  <Fragment>
+  {isTrue(false) ? (
+  <Fragment>
+  <RadixThemesBox>
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("online"))) ? (
+  <Fragment>
+  <RadixThemesBadge color={`jade`} variant={`solid`}>
+  {`Conectado`}
+</RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("offline"))) ? (
+  <Fragment>
+  <RadixThemesBadge color={`red`} variant={`solid`}>
+  {`Desconectado`}
+</RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("starting"))) ? (
+  <Fragment>
+  <RadixThemesBadge className={`blink1_5`} color={`tomato`} variant={`solid`}>
+  {`Encendiendo...`}
+</RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("desconocido"))) ? (
+  <Fragment>
+  <RadixThemesBadge className={`blink2`} color={`gray`} variant={`solid`}>
+  {`Desconocido`}
+</RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment/>
+)}
+</Fragment>
+)}
+</Fragment>
+)}
+</Fragment>
+)}
+</Fragment>
+</RadixThemesBox>
+</Fragment>
+) : (
+  <Fragment>
+  <RadixThemesText as={`p`} css={{"fontSize": "1.2em", "color": "#FFCC00"}}>
+  {`N/A`}
 </RadixThemesText>
 </Fragment>
 )}
@@ -60,27 +374,52 @@ export function Button_f48d1daf80ba93a2a1fa35f13f10659f () {
   <RadixThemesText as={`p`} css={{"color": "#CBCBCB"}}>
   {`Actividad:`}
 </RadixThemesText>
-  <RadixThemesText as={`p`} css={{"color": "#FFCC00"}}>
-  {`0%`}
-</RadixThemesText>
-</RadixThemesFlex>
-</RadixThemesFlex>
-</RadixThemesButton>
-  )
-}
-
-export function Fragment_3ea1a0318ded176a3888f943242093c6 () {
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
-
-
-
-  return (
-    <Fragment>
-  {isTrue(connectErrors.length > 0) ? (
   <Fragment>
-  <RadixThemesBadge className={``} color={`red`} radius={`large`} variant={`solid`}>
-  {`N/A`}
+  {isTrue(false) ? (
+  <Fragment>
+  <RadixThemesBox>
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("online"))) ? (
+  <Fragment>
+  <RadixThemesBadge color={`jade`} variant={`solid`}>
+  {`Conectado`}
 </RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("offline"))) ? (
+  <Fragment>
+  <RadixThemesBadge color={`red`} variant={`solid`}>
+  {`Desconectado`}
+</RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("starting"))) ? (
+  <Fragment>
+  <RadixThemesBadge className={`blink1_5`} color={`tomato`} variant={`solid`}>
+  {`Encendiendo...`}
+</RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment>
+  {isTrue(((state__page_state.server_status) === ("desconocido"))) ? (
+  <Fragment>
+  <RadixThemesBadge className={`blink2`} color={`gray`} variant={`solid`}>
+  {`Desconocido`}
+</RadixThemesBadge>
+</Fragment>
+) : (
+  <Fragment/>
+)}
+</Fragment>
+)}
+</Fragment>
+)}
+</Fragment>
+)}
+</Fragment>
+</RadixThemesBox>
 </Fragment>
 ) : (
   <Fragment>
@@ -90,190 +429,36 @@ export function Fragment_3ea1a0318ded176a3888f943242093c6 () {
 </Fragment>
 )}
 </Fragment>
+</RadixThemesFlex>
+</RadixThemesFlex>
+</RadixThemesBox>
+</RadixThemesFlex>
+</RadixThemesButton>
   )
 }
 
-export function Link_98de621841ab9d38da4d53ad76aff828 () {
+export function Link_b2bf9955486a5924b6c814cdafed6356 () {
 
 
 
   return (
-    <RadixThemesLink asChild={true} css={{"padding": "1em", "paddingRight": "1.2em", "height": "100%", "borderRadius": "0.6em", "border": "2px solid #5865F2", "backgroundColor": "rgba(0, 0, 0, 0.3)", "&:hover": {"backgroundColor": "rgba(0, 0, 0, 0.65)"}, "transition": "1s"}} target={isTrue(true) ? `_blank` : ``}>
-  <NextLink href={`https://discord.gg/pZQMW64sYT`} passHref={true}>
-  <RadixThemesFlex align={`start`} css={{"width": "100%", "alignItems": "center"}} direction={`column`} gap={`2`}>
-  <RadixThemesFlex align={`start`} css={{"width": "100%", "paddingBottom": "0.6em", "alignItems": "center"}} direction={`row`} gap={`2`}>
-  <img css={{"width": "2em", "height": "2em", "color": "#5865F2"}} src={`/icons/social/discord.svg`}/>
-=======
-export function Button_5cf73f492da9de395ec1f03e9a298543 () {
-  const [addEvents, connectError] = useContext(EventLoopContext);
-
-  const on_click_a9b4a20edc8c9ec69de1d84b4ff5c3d8 = useCallback((_e) => addEvents([Event("_set_clipboard", {content:`analand.net`})], (_e), {}), [addEvents, Event])
-
-  return (
-    <Button onClick={on_click_a9b4a20edc8c9ec69de1d84b4ff5c3d8} sx={{"backgroundColor": "rgba(0, 0, 0, 0.3)", "padding": "1em", "paddingRight": "1.2em", "height": "auto", "borderRadius": "0.6em", "border": "2px solid #FFCC00", "_hover": {"backgroundColor": "rgba(0, 0, 0, 0.65)"}, "transition": "1s"}}>
-  <VStack alignItems={`start`} sx={{"width": "100%"}}>
-  <HStack sx={{"width": "100%", "paddingBottom": "0.6em"}}>
-  <LucideServerIcon css={{"color": "#fff", "width": "2em", "height": "2em"}}>
-  {`server`}
-</LucideServerIcon>
-  <Text sx={{"fontSize": "1em", "color": "#fff"}}>
-  {`analand.net`}
-</Text>
-</HStack>
-  <HStack sx={{"paddingLeft": "1em"}}>
-  <LucidePowerIcon css={{"color": "#CBCBCB"}}>
-  {`power`}
-</LucidePowerIcon>
-  <Text as={`span`} sx={{"color": "#CBCBCB", "fontWeight": "100"}}>
-  {`Estado:`}
-</Text>
-  <Badge colorScheme={`red`} variant={`solid`}>
-  {`Desconectado`}
-</Badge>
-</HStack>
-  <HStack sx={{"paddingLeft": "1em"}}>
-  <LucideUserRoundIcon css={{"color": "#CBCBCB"}}>
-  {`user-round`}
-</LucideUserRoundIcon>
-  <Text as={`span`} sx={{"color": "#CBCBCB", "fontWeight": "100"}}>
-  {`Jugadores:`}
-</Text>
-  <Text as={`span`} sx={{"color": "#FFCC00"}}>
-  {`0`}
-</Text>
-</HStack>
-  <HStack sx={{"paddingLeft": "1em"}}>
-  <LucideActivityIcon css={{"color": "#CBCBCB"}}>
-  {`activity`}
-</LucideActivityIcon>
-  <Text as={`span`} sx={{"color": "#CBCBCB", "fontWeight": "100"}}>
-  {`Actividad:`}
-</Text>
-  <Text as={`span`} sx={{"color": "#FFCC00"}}>
-  {`0%`}
-</Text>
-</HStack>
-</VStack>
-</Button>
-  )
-}
-
-export function Link_b13f67ec330ed40dfd4a8a38853cc4e9 () {
-
-
-  return (
-    <RadixThemesLink asChild={true} css={{"backgroundColor": "rgba(0, 0, 0, 0.3)", "padding": "1em", "paddingRight": "1.2em", "height": "100%", "borderRadius": "0.6em", "border": "2px solid #5865F2", "&:hover": {"backgroundColor": "rgba(0, 0, 0, 0.65)"}, "transition": "1s"}} target={isTrue(true) ? `_blank` : ``}>
-  <NextLink href={`https://discord.gg/pZQMW64sYT`} passHref={true}>
-  <RadixThemesFlex align={`start`} css={{"width": "100%", "alignItems": "start", "flexDirection": "column"}} gap={`2`}>
-  <RadixThemesFlex align={`start`} css={{"width": "100%", "paddingBottom": "0.6em", "alignItems": "center", "flexDirection": "row"}} gap={`2`}>
-  <img css={{"width": "2em", "height": "2em", "color": "#5865F2"}} src={`/icons/discord.svg`}/>
->>>>>>> 577110be3a097b7c877ead6efd224bbba9e35780
-  <RadixThemesText as={`p`} css={{"fontSize": "1em", "color": "#fff"}}>
-  {`¡Nuestro Discord!`}
-</RadixThemesText>
-</RadixThemesFlex>
-<<<<<<< HEAD
-  <RadixThemesFlex align={`start`} direction={`column`} gap={`2`}>
-  <RadixThemesFlex align={`start`} css={{"paddingLeft": "1em"}} direction={`row`} gap={`2`}>
-  <LucideUserRoundIcon css={{"color": "#CBCBCB"}}/>
-=======
-  <RadixThemesFlex align={`start`} css={{"paddingLeft": "1em", "flexDirection": "row"}} gap={`2`}>
-  <LucideUserRoundIcon css={{"color": "#CBCBCB"}}>
-  {`user-round`}
-</LucideUserRoundIcon>
->>>>>>> 577110be3a097b7c877ead6efd224bbba9e35780
-  <RadixThemesText as={`p`} css={{"color": "#CBCBCB", "fontWeight": "100"}}>
-  {`Usuarios:`}
-</RadixThemesText>
-  <RadixThemesText as={`p`} css={{"color": "#5865F2"}}>
-  {`0`}
-</RadixThemesText>
-</RadixThemesFlex>
-<<<<<<< HEAD
-  <RadixThemesFlex align={`start`} css={{"paddingLeft": "1em"}} direction={`row`} gap={`2`}>
-  <LucideActivityIcon css={{"color": "#CBCBCB"}}/>
-=======
-  <RadixThemesFlex align={`start`} css={{"paddingLeft": "1em", "flexDirection": "row"}} gap={`2`}>
-  <LucideActivityIcon css={{"color": "#CBCBCB"}}>
-  {`activity`}
-</LucideActivityIcon>
->>>>>>> 577110be3a097b7c877ead6efd224bbba9e35780
-  <RadixThemesText as={`p`} css={{"color": "#CBCBCB", "fontWeight": "100"}}>
-  {`Online:`}
-</RadixThemesText>
-  <RadixThemesText as={`p`} css={{"color": "#5865F2"}}>
-  {`0`}
-</RadixThemesText>
-</RadixThemesFlex>
-<<<<<<< HEAD
-</RadixThemesFlex>
-  <RadixThemesText as={`p`} className={`blink`} css={{"color": "#fff", "fontSize": "0.8em"}}>
-=======
-  <RadixThemesText as={`p`} css={{"color": "#fff", "fontWeight": "100", "paddingTop": "0.6em"}}>
->>>>>>> 577110be3a097b7c877ead6efd224bbba9e35780
-  {`¡Únete a la comunidad!`}
-</RadixThemesText>
-</RadixThemesFlex>
+    <RadixThemesLink asChild={true} className={`primary_color_svg`} css={{"&:hover": {"class-name": "accent_color_svg"}}} target={isTrue(true) ? `_blank` : ``}>
+  <NextLink href={`https://twitter.com/analandesp`} passHref={true}>
+  <img alt={`Logotipo de X (Twitter)`} css={{"height": "1.5em", "width": "auto"}} src={`/icons/social/x.svg`}/>
 </NextLink>
 </RadixThemesLink>
   )
 }
 
-<<<<<<< HEAD
-export function Fragment_34f041f6aae0b1134e0b2a186d19d162 () {
+export function Flex_2255ea6cbf70e42b364c75adf3d55b41 () {
   const [addEvents, connectErrors] = useContext(EventLoopContext);
 
+  const on_mouse_move_7298c7ee9bf08e5c7af0d23e2c59b3bd = useCallback((_e) => addEvents([Event("state.page_state.get_server_status", {})], (_e), {}), [addEvents, Event])
+  const on_scroll_7298c7ee9bf08e5c7af0d23e2c59b3bd = useCallback((_e) => addEvents([Event("state.page_state.get_server_status", {})], (_e), {}), [addEvents, Event])
 
 
   return (
-    <Fragment>
-  {isTrue(connectErrors.length >= 2) ? (
-  <Fragment>
-  <RadixThemesDialog.Root css={{"zIndex": 9999}} open={connectErrors.length >= 2}>
-  <RadixThemesDialog.Content>
-  <RadixThemesDialog.Title>
-  {`Connection Error`}
-</RadixThemesDialog.Title>
-  <RadixThemesText as={`p`}>
-  {`Cannot connect to server: `}
-  {(connectErrors.length > 0) ? connectErrors[connectErrors.length - 1].message : ''}
-  {`. Check if server is reachable at `}
-  {getBackendURL(env.EVENT).href}
-</RadixThemesText>
-</RadixThemesDialog.Content>
-</RadixThemesDialog.Root>
-</Fragment>
-) : (
-  <Fragment/>
-)}
-</Fragment>
-  )
-}
-
-<<<<<<< HEAD
-const pulse = keyframes`
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-`
-
-
-=======
->>>>>>> 577110be3a097b7c877ead6efd224bbba9e35780
-export default function Component() {
-
-  return (
-    <Fragment>
-  <Fragment>
-  <div css={{"position": "fixed", "width": "100vw", "height": "0"}}>
-  <Fragment_3ea1a0318ded176a3888f943242093c6/>
-</div>
-  <Fragment_34f041f6aae0b1134e0b2a186d19d162/>
-</Fragment>
-  <RadixThemesFlex align={`start`} css={{"backgroundColor": "#151515"}} direction={`column`} gap={`0`}>
+    <RadixThemesFlex align={`start`} css={{"backgroundColor": "#151515"}} direction={`column`} onMouseMove={on_mouse_move_7298c7ee9bf08e5c7af0d23e2c59b3bd} onScroll={on_scroll_7298c7ee9bf08e5c7af0d23e2c59b3bd} gap={`0`}>
   <RadixThemesFlex align={`center`} css={{"borderTop": "1px solid #FFCC00", "background": "#151515", "position": "sticky", "paddingRight": "1.5em", "paddingTop": "0.3em", "paddingBottom": "0.3em", "zIndex": "999", "top": "0", "width": "100%"}} direction={`row`} gap={`2`}>
   <RadixThemesBox css={{"marginTop": "0.3em", "marginBottom": "0.3em", "marginInlineStart": "0.6em", "marginInlineEnd": "0.6em"}}>
   <RadixThemesLink asChild={true} css={{"width": "1.5em", "color": "#fff", "fontSize": "1.5em", "&:hover": {"underline": "none"}}}>
@@ -451,7 +636,7 @@ export default function Component() {
   <RadixThemesHoverCard.Root>
   <RadixThemesHoverCard.Trigger>
   <RadixThemesFlex>
-  <Button_dad6c4f8ba5836ae96f87cac193fab4d/>
+  <Button_32556143d10c5d1144bab9603ff98b8a/>
 </RadixThemesFlex>
 </RadixThemesHoverCard.Trigger>
   <RadixThemesHoverCard.Content css={{"fontSize": "0.8em", "color": "#fff", "backgroundColor": "#151515", "border": "2px solid #3d3d3d", "borderRight": "2px solid #FFCC00", "width": "100%", "align": "center", "padding": "1em"}}>
@@ -468,33 +653,14 @@ export default function Component() {
 </RadixThemesText>
 </RadixThemesHoverCard.Content>
 </RadixThemesHoverCard.Root>
-  <RadixThemesHoverCard.Root>
-  <RadixThemesHoverCard.Trigger>
-  <RadixThemesButton css={{"&:hover": {"backgroundColor": "rgb(0 0 0 / 65%)", "cursor": "pointer"}, "transition": "1s", "backgroundColor": "rgb(0 0 0 / 30%)", "border": "2px solid #FFCC00", "borderRadius": "0.6em", "paddingTop": "1em", "paddingBottom": "1em", "height": "100%", "borderColor": "#5865F2", "padding": "0px !important"}}>
-  <Link_c583934e07ef8cbfb6bb96b738d4e7e2/>
-</RadixThemesButton>
-</RadixThemesHoverCard.Trigger>
-  <RadixThemesHoverCard.Content css={{"borderRight": "2px solid #5865F2 !important", "fontSize": "0.8em", "color": "#fff", "backgroundColor": "#151515", "border": "2px solid #3d3d3d", "width": "100%", "align": "center", "padding": "1em"}}>
-  <RadixThemesText as={`p`}>
-  {`¡Al hacer click serás redirigido `}
-  <RadixThemesStrong>
-  {`redirigido`}
-</RadixThemesStrong>
-  {` a nuestro `}
-  <RadixThemesStrong css={{"color": "#5865F2"}}>
-  {`Discord`}
-</RadixThemesStrong>
-  {`!`}
-</RadixThemesText>
-</RadixThemesHoverCard.Content>
-</RadixThemesHoverCard.Root>
+  <Hovercard__root_d78d3babd0fe067a6eb3641c0e5ca2ea/>
 </RadixThemesFlex>
 </RadixThemesBox>
   <RadixThemesBox css={{"marginTop": "2em", "@media screen and (min-width: 0)": {"display": "block"}, "@media screen and (min-width: 30em)": {"display": "none"}, "@media screen and (min-width: 48em)": {"display": "none"}, "@media screen and (min-width: 62em)": {"display": "none"}}}>
   <RadixThemesHoverCard.Root>
   <RadixThemesHoverCard.Trigger>
   <RadixThemesFlex>
-  <Button_dad6c4f8ba5836ae96f87cac193fab4d/>
+  <Button_32556143d10c5d1144bab9603ff98b8a/>
 </RadixThemesFlex>
 </RadixThemesHoverCard.Trigger>
   <RadixThemesHoverCard.Content css={{"fontSize": "0.8em", "color": "#fff", "backgroundColor": "#151515", "border": "2px solid #3d3d3d", "borderRight": "2px solid #FFCC00", "width": "100%", "align": "center", "padding": "1em"}}>
@@ -562,7 +728,7 @@ export default function Component() {
   <RadixThemesFlex align={`center`} css={{"paddingBottom": "2em"}} direction={`row`} justify={`center`} gap={`3`}>
   <Link_69fd98b89a714bb8d383e0a7c3395a17/>
   <Link_8642dc05dca91baec10692b1ce50132a/>
-  <Link_0226945fbeb63d80af859941d0de7d74/>
+  <Link_b2bf9955486a5924b6c814cdafed6356/>
   <Link_caf3539e513b49e170e85826690a63ac/>
 </RadixThemesFlex>
   <img align={`center`} alt={`Logo de ANALAND SUPER`} css={{"height": "5em", "width": "auto"}} src={`/logotipo.svg`}/>
@@ -574,13 +740,106 @@ export default function Component() {
   <RadixThemesFlex align={`center`} direction={`row`} gap={`2`}>
   <img alt={`Logo de Discord`} css={{"height": "2em", "paddingRight": "0.6em"}} src={`/icons/social/github.svg`}/>
   <RadixThemesText as={`p`} css={{"fontSize": "0.8em", "color": "#CBCBCB", "paddingRight": "2em"}}>
-  {`BUILDING SOFTWARE WITH <3 FROM GALICIA`}
+  {`CREANDO SOFTWARE CON CARIÑO <3 DESDE GALICIA`}
 </RadixThemesText>
 </RadixThemesFlex>
 </NextLink>
 </RadixThemesLink>
 </RadixThemesFlex>
 </RadixThemesFlex>
+  )
+}
+
+export function Hovercard__root_d78d3babd0fe067a6eb3641c0e5ca2ea () {
+  
+                useEffect(() => {
+                    addEvents([Event("state.page_state.get_discord_num_members", {})])
+                    return () => {
+                        
+                    }
+                }, []);
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+
+
+
+  return (
+    <RadixThemesHoverCard.Root>
+  <RadixThemesHoverCard.Trigger>
+  <RadixThemesButton css={{"&:hover": {"backgroundColor": "rgb(0 0 0 / 65%)", "cursor": "pointer"}, "transition": "1s", "backgroundColor": "rgb(0 0 0 / 30%)", "border": "2px solid #FFCC00", "borderRadius": "0.6em", "paddingTop": "1em", "paddingBottom": "1em", "height": "100%", "borderColor": "#5865F2", "padding": "0px !important"}}>
+  <Link_9b8bbc1e59cca2def8fb110b27621503/>
+</RadixThemesButton>
+</RadixThemesHoverCard.Trigger>
+  <RadixThemesHoverCard.Content css={{"borderRight": "2px solid #5865F2 !important", "fontSize": "0.8em", "color": "#fff", "backgroundColor": "#151515", "border": "2px solid #3d3d3d", "width": "100%", "align": "center", "padding": "1em"}}>
+  <RadixThemesText as={`p`}>
+  {`¡Al hacer click serás redirigido `}
+  <RadixThemesStrong>
+  {`redirigido`}
+</RadixThemesStrong>
+  {` a nuestro `}
+  <RadixThemesStrong css={{"color": "#5865F2"}}>
+  {`Discord`}
+</RadixThemesStrong>
+  {`!`}
+</RadixThemesText>
+</RadixThemesHoverCard.Content>
+</RadixThemesHoverCard.Root>
+  )
+}
+
+export function Fragment_34f041f6aae0b1134e0b2a186d19d162 () {
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+
+
+
+  return (
+    <Fragment>
+  {isTrue(connectErrors.length >= 2) ? (
+  <Fragment>
+  <RadixThemesDialog.Root css={{"zIndex": 9999}} open={connectErrors.length >= 2}>
+  <RadixThemesDialog.Content>
+  <RadixThemesDialog.Title>
+  {`Connection Error`}
+</RadixThemesDialog.Title>
+  <RadixThemesText as={`p`}>
+  {`Cannot connect to server: `}
+  {(connectErrors.length > 0) ? connectErrors[connectErrors.length - 1].message : ''}
+  {`. Check if server is reachable at `}
+  {getBackendURL(env.EVENT).href}
+</RadixThemesText>
+</RadixThemesDialog.Content>
+</RadixThemesDialog.Root>
+</Fragment>
+) : (
+  <Fragment/>
+)}
+</Fragment>
+  )
+}
+
+export function Link_caf3539e513b49e170e85826690a63ac () {
+
+
+
+  return (
+    <RadixThemesLink asChild={true} className={`primary_color_svg`} css={{"&:hover": {"class-name": "accent_color_svg"}}} target={isTrue(true) ? `_blank` : ``}>
+  <NextLink href={`https://github.com/Cocotterooo/Web_Analand`} passHref={true}>
+  <img alt={`Logotipo de Github`} css={{"height": "1.5em", "width": "auto"}} src={`/icons/social/github.svg`}/>
+</NextLink>
+</RadixThemesLink>
+  )
+}
+
+export default function Component() {
+
+  return (
+    <Fragment>
+  <Fragment>
+  <div css={{"position": "fixed", "width": "100vw", "height": "0"}}>
+  <Fragment_3ea1a0318ded176a3888f943242093c6/>
+</div>
+  <Fragment_34f041f6aae0b1134e0b2a186d19d162/>
+</Fragment>
+  <Flex_2255ea6cbf70e42b364c75adf3d55b41/>
   <NextHead>
   <title>
   {`Analand Super | Servidor de Minecraft Premium y No Premium`}

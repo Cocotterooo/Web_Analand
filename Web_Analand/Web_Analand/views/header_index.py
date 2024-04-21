@@ -7,10 +7,7 @@ from Web_Analand.components.discord.discord_card import discord_card
 from Web_Analand.constants import SERVER_IP_PRIMARY, DISCORD_URL
 
 # region STATIC
-def header_index(
-        discord_total_members: int,
-        discord_online_members: int
-        ) -> rx.components:    
+def header_index() -> rx.components:    
     return rx.vstack(
         rx.vstack(
             rx.text(
@@ -38,7 +35,7 @@ def header_index(
         rx.tablet_and_desktop(
             rx.flex(
                 server_state(SERVER_IP_PRIMARY, SERVER_IP_PRIMARY),
-                discord_card(DISCORD_URL, discord_total_members, discord_online_members),
+                discord_card(DISCORD_URL),
                 margin_top= Size.EXTRA_LARGE.value,
                 justify= "center",
                 spacing= '4',

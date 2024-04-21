@@ -22,17 +22,14 @@ from Web_Analand.state.PageState import PageState
     description=utils.index_description,
     image=utils.preview,
     #meta=utils.index_meta,
-    on_load=PageState.discord_num_members
+    #on_load=PageState
 )
 def index():
     return rx.vstack(
         top_navbar(),
         # Background image with dark overlay style
         rx.box(
-            header_index(
-                discord_total_members= PageState.total_members,
-                discord_online_members= PageState.online_members
-            ),
+            header_index(),
             #rx.text(IndexState.say_hello, font_size= Size.MEDIUM.value, color= TextColor.PRIMARY.value),
             border_bottom= f"1px solid {Color.ACCENT.value}",
             style={
@@ -54,5 +51,7 @@ def index():
         ),
         footer(),
         background_color= Color.PRIMARY.value,
-        spacing= "0"
+        spacing= "0",
+        on_mouse_move= PageState.get_server_status,
+        on_scroll= PageState.get_server_status
     )

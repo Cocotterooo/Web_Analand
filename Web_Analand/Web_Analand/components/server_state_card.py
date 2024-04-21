@@ -34,25 +34,7 @@ def server_state(title:str, server_ip:str)->rx.components:
                                 title= "Estado:", 
                                 icon= "/icons/context/sec_color/power.svg", 
                                 alt= "Icono de estado", 
-                                info= "Desconectado",
-                                badge= True,
-                                color_badge= "red",
-                                #rx.badge(
-                                #    "Conectado", 
-                                #    variant="solid", 
-                                #    color_scheme="jade"
-                                #),
-                                #rx.badge(
-                                #    "Desconectado", 
-                                #    variant="solid", 
-                                #    color_scheme="red"
-                                #),
-                                #rx.badge(
-                                #    "Encendiendo...", 
-                                #    variant="solid", 
-                                #    color_scheme="tomato",
-                                #    class_name="blink"
-                                #)
+                                server_status_badge= True,
                             ),
                             information_state_line(
                                 title= "Jugadores:", 
@@ -60,7 +42,7 @@ def server_state(title:str, server_ip:str)->rx.components:
                                 alt= "Icono de jugadores", 
                                 info= "N/A",
                                 color_info= TextColor.ACCENT.value,
-                                badge= False
+                                server_status_badge= False,
                             ),
                             information_state_line(
                                 title= "Actividad:", 
@@ -68,7 +50,7 @@ def server_state(title:str, server_ip:str)->rx.components:
                                 alt= "Icono de actividad", 
                                 info= "N/A",
                                 color_info= TextColor.ACCENT.value,
-                                badge= False
+                                server_status_badge= False,
                             ),
                             width= "100%",
                             align= "start",

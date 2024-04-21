@@ -1,5 +1,8 @@
 import reflex as rx
 
+# State:
+from Web_Analand.state.PageState import PageState
+
 # Styles:
 from Web_Analand.styles.styles import Size, card_info_index
 from Web_Analand.styles.colors import Color, TextColor
@@ -8,13 +11,9 @@ from Web_Analand.styles.fonts import FontWeight
 from Web_Analand.components.information_state_line import information_state_line
 
 
-# region STATIC
-
 def discord_card(invitation_url:str,
-                discord_total_members:int, 
-                discord_online_members:int,
-                color:str= Color.DISCORD.value, 
-                ) -> rx.components:
+    color:str= Color.DISCORD.value, 
+    ) -> rx.components:
     return rx.hover_card.root(
         rx.hover_card.trigger(
             rx.button(
@@ -36,14 +35,14 @@ def discord_card(invitation_url:str,
                                     title= "Miembros:", 
                                     icon= "/icons/context/sec_color/users-round.svg", 
                                     alt= "Icono de Usuarios", 
-                                    info= discord_total_members,
+                                    info= PageState.discord_total_members,
                                     color_info= color
                                 ),
                                 information_state_line(
                                     title= "Online:", 
                                     icon= "/icons/context/sec_color/unplug.svg", 
                                     alt= "Icono de un enchufe", 
-                                    info= discord_online_members,
+                                    info= PageState.discord_online_members,
                                     color_info= color
                                 ),
                                 width= "100%",
@@ -89,5 +88,6 @@ def discord_card(invitation_url:str,
                 '!' 
             ),
             border_right= f"2px solid {color} !important",
-        )
+        ),
+        on_mount= PageState.get_discord_num_members
     )

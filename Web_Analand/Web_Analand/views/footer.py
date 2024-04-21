@@ -1,7 +1,7 @@
 import reflex as rx
 
 # Constants:
-from Web_Analand.constants import GITHUB_REPO, DISCORD_URL, INSTAGRAM_URL
+from Web_Analand.constants import GITHUB_REPO, DISCORD_URL, INSTAGRAM_URL, TWITTER_URL
 from Web_Analand.styles.styles import Size, Color, TextColor
 # Components:
 from Web_Analand.components.icon_link import icon_link
@@ -22,8 +22,8 @@ def footer() -> rx.components:
             ),
             icon_link(
                 src="/icons/social/x.svg", 
-                alt= "Logotipo de Instagram",
-                href= INSTAGRAM_URL
+                alt= "Logotipo de X (Twitter)",
+                href= TWITTER_URL
             ),
             icon_link(
                 src= "/icons/social/github.svg",
@@ -58,7 +58,7 @@ def footer() -> rx.components:
                     padding_right= Size.SMALL.value
                 ),
                 rx.text(
-                    "BUILDING SOFTWARE WITH <3 FROM GALICIA",
+                    "CREANDO SOFTWARE CON CARIÑO <3 DESDE GALICIA",
                     font_size= Size.MEDIUM_SMALL.value,
                     color= TextColor.SECONDARY.value,
                     padding_right= Size.LARGE.value
