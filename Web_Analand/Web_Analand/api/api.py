@@ -6,7 +6,7 @@ DISCORDAPI = DiscordAPI(DISCORD_GUILD_ID)
 PTERODACTYLAPI = PterodactylAPI()
 
 def hello() -> str:
-    return "¡Hello, Api Analand!"
+    return '¡Hello, Api Analand!'
 
 def repo() -> str:
     return GITHUB_REPO

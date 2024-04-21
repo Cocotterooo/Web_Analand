@@ -19,19 +19,19 @@ class DiscordAPI:
         self._url_guild_roles = f'https://discord.com/api/guilds/{self.server_id}/roles' # Roles del servidor
         
     async def get_server_members(self) -> int:
-        """Obtain the members of the server
+        '''Obtain the members of the server
         Returns:
             dict: [members[data of the members]]
-        """
+        '''
         response = requests.get(self._url_members, headers=self.header)
         members = response.json()
         return members
     
     async def get_num_members(self) -> dict:
-        """Obtain the number of members and online members of the server
+        '''Obtain the number of members and online members of the server
         Returns:
             dict: [total members, online members]
-        """
+        '''
         response = requests.get(self._url_guild_preview, headers=self.header)
         preview = response.json()
         total_members = preview['approximate_member_count']
@@ -39,19 +39,19 @@ class DiscordAPI:
         return {'total_members': total_members, 'online_members': online_members}
     
     async def get_roles(self) -> int:
-        """Obtain the roles of the server
+        '''Obtain the roles of the server
         Returns:
             dict: [roles[data of the roles]]
-        """
+        '''
         response = requests.get(self._url_guild_roles, headers=self.header)
         roles = response.json()
         return roles
     
     async def get_member(self, member_id:int) -> int:
-        """Obtain a member of the server
+        '''Obtain a member of the server
         Returns:
             dict: [member[data of the member]]
-        """
-        response = requests.get(f"{self._url_guild_roles}{member_id}", headers=self.header)
+        '''
+        response = requests.get(f'{self._url_guild_roles}{member_id}', headers=self.header)
         member = response.json()
         return member

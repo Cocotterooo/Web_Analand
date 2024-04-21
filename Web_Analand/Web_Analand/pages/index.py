@@ -31,27 +31,27 @@ def index():
         rx.box(
             header_index(),
             #rx.text(IndexState.say_hello, font_size= Size.MEDIUM.value, color= TextColor.PRIMARY.value),
-            border_bottom= f"1px solid {Color.ACCENT.value}",
+            border_bottom= f'1px solid {Color.ACCENT.value}',
             style={
-                "background": "linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url('/galeria/galeria_webp/cueva_elevador.webp') center/cover no-repeat",
-                "background_attachment": "fixed", # Da el efecto de "persiana" al hacer scroll
-                "background_size":["cover", "cover", "cover", "cover", "cover"],
-                "background_position":["center", "center", "center", "center", "center"],
-                "background_repeat":["no-repeat", "no-repeat", "no-repeat", "no-repeat", "no-repeat"],
-                "width": "100%",
-                "height": "100%", 
-                "margin_bottom": f"{Size.MEDIUM.value}"
+                'background': 'linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url("/galeria/galeria_webp/cueva_elevador.webp") center/cover no-repeat',
+                'background_attachment': 'fixed', # Da el efecto de 'persiana' al hacer scroll
+                'background_size':['cover', 'cover', 'cover', 'cover', 'cover'],
+                'background_position':['center', 'center', 'center', 'center', 'center'],
+                'background_repeat':['no-repeat', 'no-repeat', 'no-repeat', 'no-repeat', 'no-repeat'],
+                'width': '100%',
+                'height': '100%', 
+                'margin_bottom': f'{Size.MEDIUM.value}'
             }
         ),
         rx.vstack(
             focus_info(),
-            align="center",
-            justify="center",
-            width="100%",
+            align='center',
+            justify='center',
+            width='100%',
         ),
         footer(),
         background_color= Color.PRIMARY.value,
-        spacing= "0",
+        spacing= '0',
         on_mouse_move= PageState.get_server_status,
         on_scroll= PageState.get_server_status
     )

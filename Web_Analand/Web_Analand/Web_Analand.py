@@ -17,9 +17,9 @@ app = rx.App(
 app.add_page(index)
 
 # Public API routes:
-app.api.add_api_route("/hello", hello)
-app.api.add_api_route("/repo", repo)
-app.api.add_api_route("/discord_members", discord_members)
-app.api.add_api_route("/discord_member", get_member)
-app.api.add_api_route("/discord_num_members", get_num_members)
-app.api.add_api_route("/server", get_server_resources)
+app.api.add_api_route('/hello', hello)
+app.api.add_api_route('/repo', repo)
+app.api.add_api_route('/discord_members', discord_members)
+app.api.add_api_route('/discord_member', get_member)
+app.api.add_api_route('/discord_num_members', get_num_members)
+app.api.add_api_route('/server', get_server_resources)

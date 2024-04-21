@@ -11,33 +11,33 @@ def header_index() -> rx.components:
     return rx.vstack(
         rx.vstack(
             rx.text(
-                "BIENVENIDO A ",
-                font_weight= "300",
+                'BIENVENIDO A ',
+                font_weight= '300',
                 style= title_big
             ),
             rx.text(
-                "ANALAND SUPER™",
-                font_weight= "400",
+                'ANALAND SUPER™',
+                font_weight= '400',
                 style= title_big
             ),
             rx.text(
-                "TU DIVERSIÓN, ES NUESTRA PASIÓN EN CADA DETALLE",
+                'TU DIVERSIÓN, ES NUESTRA PASIÓN EN CADA DETALLE',
                 margin_top= Size.BIG.value,
-                font_weight= "200",
+                font_weight= '200',
                 style= title_big,
-                font_style= "italic",
+                font_style= 'italic',
                 font_size= Size.BIG.value,
             ),
-            color= "white",
-            align= "center",
-            justify= "center",
+            color= 'white',
+            align= 'center',
+            justify= 'center',
         ),
         rx.tablet_and_desktop(
             rx.flex(
                 server_state(SERVER_IP_PRIMARY, SERVER_IP_PRIMARY),
                 discord_card(DISCORD_URL),
                 margin_top= Size.EXTRA_LARGE.value,
-                justify= "center",
+                justify= 'center',
                 spacing= '4',
             ),
         ),
@@ -46,9 +46,9 @@ def header_index() -> rx.components:
             margin_top= Size.LARGE.value,
         ),
         padding= Size.DEFAULT.value,
-        direction= "column",     # Sets the direction of main axis to column
-        align= "center",         # Centers along the cross axis (horizontal centering)
-        justify= "center",       # Centers along the main axis (vertical centering)
-        width= "100%",           # Use 100% width if you want to center in the viewport
-        height= "85vh"           # Use 85vh for full viewport height
+        direction= 'column',     # Sets the direction of main axis to column
+        align= 'center',         # Centers along the cross axis (horizontal centering)
+        justify= 'center',       # Centers along the main axis (vertical centering)
+        width= '100%',           # Use 100% width if you want to center in the viewport
+        height= '85vh'           # Use 85vh for full viewport height
     )

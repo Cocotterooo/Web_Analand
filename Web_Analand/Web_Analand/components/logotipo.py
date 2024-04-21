@@ -8,34 +8,34 @@ def logotipo() -> rx.components:
     return rx.link(
         rx.hstack(
             rx.image(
-                src= "/logotipo.svg",
+                src= '/logotipo.svg',
                 alt= '''Logotipo de Analand Super formando un cuadrado a su vez
                     formado por cuatro cuadrados amarillos en distintas tonalidades, 
                     con la letra 'A' mezclada con una N hecha con la transparencia de los cuadrados del logotipo''',
                 width= Size.LARGE.value,
-                height= "auto",
-                margin_bottom= "0.05em"
+                height= 'auto',
+                margin_bottom= '0.05em'
             ),
             rx.vstack(
                 rx.text(
-                    "ANALAND",
-                    trim= "both",
+                    'ANALAND',
+                    trim= 'both',
                 ),
                 rx.text(
-                    "SUPER",
-                    trim= "both",
+                    'SUPER',
+                    trim= 'both',
                 ),
-                spacing= "2",
-                width= "auto"
+                spacing= '2',
+                width= 'auto'
             ),
             
-            align= "center",
+            align= 'center',
         ),
-        href= "/",
+        href= '/',
         width= Size.BIG.value,   
         color= TextColor.PRIMARY.value,
         font_size= Size.BIG.value,
         _hover= {
-            "underline": "none",
+            'underline': 'none',
         }
     )

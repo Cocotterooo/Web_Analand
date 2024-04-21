@@ -6,32 +6,32 @@ def status_badge_server()->rx.components:
         rx.cond(
             (PageState.server_status == 'online'),
             rx.badge(
-                "Conectado", 
-                variant="solid", 
-                color_scheme="jade"
+                'Conectado', 
+                variant='solid', 
+                color_scheme='jade'
             ),
             rx.cond(
                 (PageState.server_status == 'offline'),
                 rx.badge(
-                    "Desconectado", 
-                    variant="solid", 
-                    color_scheme="red"
+                    'Desconectado', 
+                    variant='solid', 
+                    color_scheme='red'
                 ),
                 rx.cond(
                     (PageState.server_status == 'starting'),
                     rx.badge(
-                        "Encendiendo...", 
-                        variant="solid", 
-                        color_scheme="tomato",
-                        class_name="blink1_5"
+                        'Encendiendo...', 
+                        variant='solid', 
+                        color_scheme='tomato',
+                        class_name='blink1_5'
                     ),
                     rx.cond(
                         (PageState.server_status == 'desconocido'),
                         rx.badge(
-                            "Desconocido", 
-                            variant="solid", 
-                            color_scheme="gray",
-                            class_name="blink2"
+                            'Desconocido', 
+                            variant='solid', 
+                            color_scheme='gray',
+                            class_name='blink2'
                         )
                     )
                 )

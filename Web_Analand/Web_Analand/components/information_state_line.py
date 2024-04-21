@@ -11,7 +11,7 @@ def information_state_line(
         title:str, 
         icon:str, 
         alt:str, 
-        info:str = "N/A", 
+        info:str = 'N/A', 
         color_info:str= TextColor.PRIMARY.value, 
         server_status_badge:bool= False,
         ) -> rx.components:
@@ -33,5 +33,5 @@ def information_state_line(
                 color= color_info
             )
         ),
-        align= "center"
+        align= 'center'
     )

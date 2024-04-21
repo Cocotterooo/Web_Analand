@@ -16,48 +16,48 @@ def server_state(title:str, server_ip:str)->rx.components:
                 rx.vstack(
                     rx.hstack(
                         rx.image(
-                            src= "/icons/context/prim_color/server.svg",
-                            alt= "Icono de servidor",
+                            src= '/icons/context/prim_color/server.svg',
+                            alt= 'Icono de servidor',
                         ),
                         rx.text(
                             title, 
                             font_size= Size.MEDIUM.value,
                             color= TextColor.PRIMARY.value
                         ),
-                        width= "100%",
+                        width= '100%',
                         padding_bottom= Size.SMALL.value,
-                        align= "center"
+                        align= 'center'
                     ),
                     rx.box(
                         rx.vstack(
                             information_state_line(
-                                title= "Estado:", 
-                                icon= "/icons/context/sec_color/power.svg", 
-                                alt= "Icono de estado", 
+                                title= 'Estado:', 
+                                icon= '/icons/context/sec_color/power.svg', 
+                                alt= 'Icono de estado', 
                                 server_status_badge= True,
                             ),
                             information_state_line(
-                                title= "Jugadores:", 
-                                icon= "/icons/context/sec_color/users-round.svg", 
-                                alt= "Icono de jugadores", 
-                                info= "N/A",
+                                title= 'Jugadores:', 
+                                icon= '/icons/context/sec_color/users-round.svg', 
+                                alt= 'Icono de jugadores', 
+                                info= 'N/A',
                                 color_info= TextColor.ACCENT.value,
                                 server_status_badge= False,
                             ),
                             information_state_line(
-                                title= "Actividad:", 
-                                icon= "/icons/context/sec_color/square-activity.svg", 
-                                alt= "Icono de actividad", 
-                                info= "N/A",
+                                title= 'Actividad:', 
+                                icon= '/icons/context/sec_color/square-activity.svg', 
+                                alt= 'Icono de actividad', 
+                                info= 'N/A',
                                 color_info= TextColor.ACCENT.value,
                                 server_status_badge= False,
                             ),
-                            width= "100%",
-                            align= "start",
+                            width= '100%',
+                            align= 'start',
                             padding_left= Size.DEFAULT.value
                         ),
-                        width= "100%",
-                        align= "center"
+                        width= '100%',
+                        align= 'center'
                     ),
                 ),
                 on_click=rx.set_clipboard(server_ip), # Copia la ip del servidor al portapapeles
@@ -66,14 +66,14 @@ def server_state(title:str, server_ip:str)->rx.components:
         ),
         rx.hover_card.content(
             rx.text(
-                f"¡Al hacer click se copiará la IP: ", 
+                f'¡Al hacer click se copiará la IP: ', 
                 rx.text.strong(
                     server_ip,
                     color= TextColor.ACCENT.value
                 ), 
-                " en tu ",
+                ' en tu ',
                 rx.text.strong(
-                    "portapapeles"
+                    'portapapeles'
                 ),
                 '!'
             )

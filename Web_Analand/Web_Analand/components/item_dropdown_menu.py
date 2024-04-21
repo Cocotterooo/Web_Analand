@@ -7,17 +7,17 @@ def item_dropdown_menu(title:str, href:str, icon:str, alt:str) -> rx.components:
         rx.hstack(
             rx.image(
                 src=icon,
-                height="auto",
+                height='auto',
                 alt=alt
             ),
             rx.text(title),
-            align="center",
+            align='center',
         ),
         href= href,
         style= {
-            "color": TextColor.SECONDARY.value,
-            "_hover": {
-                "color": TextColor.ACCENT.value,
+            'color': TextColor.SECONDARY.value,
+            '_hover': {
+                'color': TextColor.ACCENT.value,
             }
         }
     )
