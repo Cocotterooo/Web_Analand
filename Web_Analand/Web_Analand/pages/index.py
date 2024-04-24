@@ -30,7 +30,6 @@ def index():
         # Background image with dark overlay style
         rx.box(
             header_index(),
-            #rx.text(IndexState.say_hello, font_size= Size.MEDIUM.value, color= TextColor.PRIMARY.value),
             border_bottom= f'1px solid {Color.ACCENT.value}',
             style={
                 'background': 'linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url("/galeria/galeria_webp/cueva_elevador.webp") center/cover no-repeat',
@@ -52,6 +51,6 @@ def index():
         footer(),
         background_color= Color.PRIMARY.value,
         spacing= '0',
-        on_mouse_move= PageState.get_server_status,
-        on_scroll= PageState.get_server_status
+        #on_mouse_move= PageState.get_server_status,
+        #on_scroll= PageState.get_server_status
     )
