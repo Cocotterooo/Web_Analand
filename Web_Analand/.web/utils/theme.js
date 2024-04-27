@@ -1,1 +1,0 @@
-export default {"styles": {"global": {":root": {"*::selection": {"backgroundColor": "rgba(255, 204, 0, 0.3)"}}, "body": {"fontSize": "16px", "fontFamily": "Poppins", "fontWeight": "200", "color": "#fff"}}}}
