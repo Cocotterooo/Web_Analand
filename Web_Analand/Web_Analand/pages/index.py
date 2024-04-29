@@ -28,19 +28,40 @@ def index():
     return rx.vstack(
         top_navbar(),
         # Background image with dark overlay style
-        rx.box(
-            header_index(),
-            border_bottom= f'1px solid {Color.ACCENT.value}',
-            style={
-                'background': 'linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url("/galeria/galeria_webp/cueva_elevador.webp") center/cover no-repeat',
-                'background_attachment': 'fixed', # Da el efecto de 'persiana' al hacer scroll
-                'background_size':['cover', 'cover', 'cover', 'cover', 'cover'],
-                'background_position':['center', 'center', 'center', 'center', 'center'],
-                'background_repeat':['no-repeat', 'no-repeat', 'no-repeat', 'no-repeat', 'no-repeat'],
-                'width': '100%',
-                'height': '100%', 
-                'margin_bottom': f'{Size.MEDIUM.value}'
-            }
+        rx.tablet_and_desktop(
+            rx.box(
+                header_index(),
+                border_bottom= f'1px solid {Color.ACCENT.value}',
+                style={
+                    'background': 'linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url("/galeria/galeria_webp/cueva_elevador.webp") center/cover no-repeat',
+                    'background_attachment': 'fixed', # Da el efecto de 'persiana' al hacer scroll
+                    'background_size':['cover', 'cover', 'cover', 'cover', 'cover'],
+                    'background_position':['center', 'center', 'center', 'center', 'center'],
+                    'background_repeat':['no-repeat', 'no-repeat', 'no-repeat', 'no-repeat', 'no-repeat'],
+                    'width': '100%',
+                    'height': '100%', 
+                    'margin_bottom': f'{Size.MEDIUM.value}',
+                    'padding_bottom': '10px'
+                }
+            ),
+            width='100%'
+        ),
+        rx.mobile_only(
+            rx.box(
+                header_index(),
+                border_bottom= f'1px solid {Color.ACCENT.value}',
+                style={
+                    'background': 'linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url("/galeria/galeria_webp/cueva_elevador.webp") center/cover no-repeat',
+                    'background_size':['cover', 'cover', 'cover', 'cover', 'cover'],
+                    'background_position':['center', 'center', 'center', 'center', 'center'],
+                    'background_repeat':['no-repeat', 'no-repeat', 'no-repeat', 'no-repeat', 'no-repeat'],
+                    'width': '100%',
+                    'height': 'auto', 
+                    'margin_bottom': f'{Size.MEDIUM.value}',
+                    'padding_bottom': '10px'
+                }
+            ),
+            width='100%'
         ),
         rx.vstack(
             focus_info(),
