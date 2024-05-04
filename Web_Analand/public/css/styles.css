@@ -10,14 +10,12 @@
     animation: blinker 2s linear infinite;
 }
 
-.primary_color_svg {
-    fill: white;
+.icono {
+  fill: white; /* Color blanco por defecto */
+  transition: fill 0.3s; /* Transición suave para el cambio de color */
 }
-.secondary_color_svg {
-    fill: #CBCBCB;
-}
-.accent_color_svg {
-    fill: #FFCC00 !important;
+.icono:hover {
+    fill: blue; /* Cambia a azul cuando pasas el ratón por encima */
 }
 
 ::-webkit-scrollbar {
