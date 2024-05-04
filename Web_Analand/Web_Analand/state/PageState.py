@@ -14,7 +14,7 @@ class PageState(rx.State):
     #Pterodactyl:
     server_status: str = 'desconocido'
 
-    @rx.background
+    @rx.background # Returns discord members every 5 seconds
     async def get_discord_num_members(self):
         while True:
             async with self:
@@ -23,7 +23,7 @@ class PageState(rx.State):
                 self.discord_online_members = discord_num_members['online_members']
             await asyncio.sleep(5)
 
-    @rx.background
+    @rx.background # Returns server status every 1 second
     async def get_server_status(self):
         while True:
             async with self:
@@ -37,4 +37,4 @@ class PageState(rx.State):
                     self.server_status = 'starting'
                 else:
                     self.server_status = 'desconocido'
-            await asyncio.sleep(1)
+            await asyncio.sleep(2.5)

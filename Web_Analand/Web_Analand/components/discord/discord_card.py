@@ -89,5 +89,5 @@ def discord_card(invitation_url:str,
             ),
             border_right= f'2px solid {color} !important',
         ),
-        on_mount= PageState.get_discord_num_members
+        #on_mount= PageState.get_discord_num_members
     )

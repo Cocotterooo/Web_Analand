@@ -17,7 +17,7 @@ def focus_info() -> rx.components:
         ),
         rx.text('Bienvenido a ',
             rx.text.strong('Analand Super™'),
-            ' un proyecto que crece cada día más y más para ofrecerte la',
+            ', un proyecto que crece cada día más y más para ofrecerte la',
             rx.text.strong(' mejor experiencia'),
             ' en el mundo de Minecraft que podamos darte. Nuestra prioridad es que te',
             rx.text.strong(' diviertas y disfrutes'),
@@ -30,16 +30,16 @@ def focus_info() -> rx.components:
             rx.text.strong(' nuestra tienda'),
             ', las reglas, las',
             rx.text.strong(' últimas novedades'),
-            ' y algunas estadísticas sobre Analand y sus usuarios. :)',
-            margin_y=Size.BIG.value
+            ', descargas varias y algunas estadísticas sobre Analand y sus usuarios. :)',
+            margin_y= Size.BIG.value
         ),
         rx.text('✨ ¡Esperamos que lo disfrutes! ✨'),
-        width='100%',
+        width= '100%',
         max_width= MAX_WIDTH,
-        align='center',
-        text_align='center',
-        font_family=Font.SECONDARY.value,
-        font_weight='50',
-        padding_inline='1em',
-        color=TextColor.SECONDARY.value
+        align= 'center',
+        text_align= 'center',
+        font_family= Font.SECONDARY.value,
+        font_weight= '50',
+        padding_inline= '1em',
+        color= TextColor.SECONDARY.value
     )

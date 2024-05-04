@@ -36,6 +36,5 @@ def status_badge_server()->rx.components:
                     )
                 )
             )
-        ),
-        on_mount= PageState.get_server_status
+        )
     )

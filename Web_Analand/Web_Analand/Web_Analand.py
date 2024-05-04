@@ -5,7 +5,7 @@ from Web_Analand.styles import styles
 #pages:
 from Web_Analand.pages.index import index
 #api:
-from Web_Analand.api.api import hello, repo, discord_members, get_num_members, get_member, get_server_resources
+from Web_Analand.api.api import repo, discord_members, get_num_members, get_member, get_server_resources
 
 
 
@@ -17,7 +17,6 @@ app = rx.App(
 app.add_page(index)
 
 # Public API routes:
-app.api.add_api_route('/hello', hello)
 app.api.add_api_route('/repo', repo)
 app.api.add_api_route('/discord_members', discord_members)
 app.api.add_api_route('/discord_member', get_member)

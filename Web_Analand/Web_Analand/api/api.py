@@ -12,17 +12,17 @@ def repo() -> str:
     return GITHUB_REPO
 
 async def discord_members() -> dict:
-    members = await DISCORDAPI.get_server_members()
+    members = DISCORDAPI.get_server_members()
     return members
 
 async def get_num_members() -> dict:
-    member = await DISCORDAPI.get_num_members()
+    member = DISCORDAPI.get_num_members()
     return member
 
 async def get_member() -> dict:
-    presences = await DISCORDAPI.get_member()
+    presences = DISCORDAPI.get_member()
     return presences
 
 async def get_server_resources(server_id: str) -> dict:
-    server = await PTERODACTYLAPI.get_server_resources(server_id)
+    server = PTERODACTYLAPI.get_server_resources(server_id)
     return server

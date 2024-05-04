@@ -21,7 +21,7 @@ def top_navbar(background_color:str=Color.PRIMARY.value) -> rx.components:
             margin_x= Size.SMALL.value,
         ),
         rx.spacer(),
-        rx.tablet_and_desktop(
+        rx.desktop_only(
             rx.hstack(
                 rx.spacer(),
                 link_buttom_navbar('Inicio', '/', '/icons/context/sec_color/home.svg', 'Icono de inicio'),
@@ -33,11 +33,11 @@ def top_navbar(background_color:str=Color.PRIMARY.value) -> rx.components:
                 spacing= '5'
             )
         ),
-        rx.mobile_only(
+        rx.mobile_and_tablet(
             discord_buttom(DISCORD_URL),
             margin_x= Size.MEDIUM.value,
         ),
-        rx.mobile_only(
+        rx.mobile_and_tablet(
             rx.menu.root(
                 rx.menu.trigger(
                     rx.image(

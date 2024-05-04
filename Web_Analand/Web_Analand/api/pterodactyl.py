@@ -12,7 +12,7 @@ class PterodactylAPI:
         'Accept': 'Application/vnd.pterodactyl.v1+json'
     }
 
-    async def get_server_resources(self, server_id:str) -> dict:
+    def get_server_resources(self, server_id:str) -> dict:
         """Obtain the information of the server
         Returns:
             dict: [server_info[data of the server]]

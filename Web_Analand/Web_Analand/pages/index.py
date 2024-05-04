@@ -22,7 +22,7 @@ from Web_Analand.state.PageState import PageState
     description=utils.index_description,
     image=utils.preview,
     #meta=utils.index_meta,
-    #on_load=PageState
+    on_load=[PageState.get_discord_num_members, PageState.get_server_status]
 )
 def index():
     return rx.vstack(
@@ -33,7 +33,7 @@ def index():
                 header_index(),
                 border_bottom= f'1px solid {Color.ACCENT.value}',
                 style={
-                    'background': 'linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url("/galeria/galeria_webp/cueva_elevador.webp") center/cover no-repeat',
+                    'background': 'linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url("/galeria/cueva_elevador.webp") center/cover no-repeat',
                     'background_attachment': 'fixed', # Da el efecto de 'persiana' al hacer scroll
                     'background_size':['cover', 'cover', 'cover', 'cover', 'cover'],
                     'background_position':['center', 'center', 'center', 'center', 'center'],
@@ -72,6 +72,4 @@ def index():
         footer(),
         background_color= Color.PRIMARY.value,
         spacing= '0',
-        #on_mouse_move= PageState.get_server_status,
-        #on_scroll= PageState.get_server_status
     )

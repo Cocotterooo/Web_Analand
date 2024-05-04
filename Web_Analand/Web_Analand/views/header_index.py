@@ -32,7 +32,7 @@ def header_index() -> rx.components:
             align= 'center',
             justify= 'center',
         ),
-        rx.tablet_and_desktop(
+        rx.desktop_only(
             rx.flex(
                 server_state(SERVER_IP_PRIMARY, SERVER_IP_PRIMARY),
                 discord_card(DISCORD_URL),
@@ -41,7 +41,7 @@ def header_index() -> rx.components:
                 spacing= '4',
             ),
         ),
-        rx.mobile_only(
+        rx.mobile_and_tablet(
             server_state(SERVER_IP_PRIMARY, SERVER_IP_PRIMARY),
             margin_top= Size.LARGE.value,
         ),

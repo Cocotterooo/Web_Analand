@@ -5,6 +5,7 @@ class Color(Enum):
     SECONDARY = '#3d3d3d'
     TERCIARY = '#fff'
     ACCENT = '#FFCC00'
+    LIGHT_ACCENT = '#FFCF59'
     NONE = 'transparent'
     DISCORD = '#5865F2'
 

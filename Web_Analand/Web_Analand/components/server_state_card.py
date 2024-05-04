@@ -6,6 +6,8 @@ from Web_Analand.styles.colors import Color, TextColor
 from Web_Analand.styles.fonts import FontWeight
 # Components:
 from Web_Analand.components.information_state_line import information_state_line
+# State:
+from Web_Analand.state.PageState import PageState
 
 
 # region STATIC
@@ -77,5 +79,6 @@ def server_state(title:str, server_ip:str)->rx.components:
                 ),
                 '!'
             )
-        )
+        ),
+        #on_mount= PageState.get_server_status
     )

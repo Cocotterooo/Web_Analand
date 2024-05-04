@@ -11,9 +11,5 @@ def icon_link(src:str, alt:str, href:str) -> rx.components:
             width= 'auto'
         ),
         href= href,
-        is_external= True,
-        class_name= 'primary_color_svg',
-        _hover={
-            'class-name': 'accent_color_svg'
-        }
+        is_external= True
     )
