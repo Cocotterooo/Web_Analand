@@ -14,4 +14,4 @@
 ### Visita [https://analand.net](https://analand.net)
 
 > [!CAUTION]
-> Este proyecto es de código abierno, no software libre.
+> **© Este proyecto es de código abierno, no software libre.**
