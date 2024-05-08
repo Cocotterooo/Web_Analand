@@ -12,3 +12,6 @@
 > Analand es un servidor de Minecraft Supervivencia con economía, eventos, minijuegos y mucho más. Nos esforzamos para hacer que la experiencia sea inigualable y de calidad.
 
 ### Visita [https://analand.net](https://analand.net)
+
+> [!CAUTION]
+> Este proyecto es de código abierno, no software libre.
