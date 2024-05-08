@@ -17,7 +17,7 @@ class PterodactylAPI:
         Returns:
             dict: [server_info[data of the server]]
         """
-        if server_id is None:
+        if not server_id:
             return {'Error': 'Server ID is required'}
         url_server_resources = f'https://panel.analand.eu/api/client/servers/{server_id}/resources'
         response = requests.get(url_server_resources, headers=self.header)

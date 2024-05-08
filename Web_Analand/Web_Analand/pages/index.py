@@ -21,7 +21,6 @@ from Web_Analand.state.PageState import PageState
     title=utils.index_title,
     description=utils.index_description,
     image=utils.preview,
-    #meta=utils.index_meta,
     on_load=[PageState.get_discord_num_members, PageState.get_server_status]
 )
 def index():
@@ -51,7 +50,7 @@ def index():
                 header_index(),
                 border_bottom= f'1px solid {Color.ACCENT.value}',
                 style={
-                    'background': 'linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url("/galeria/galeria_webp/cueva_elevador.webp") center/cover no-repeat',
+                    'background': 'linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url("/galeria/cueva_elevador.webp") center/cover no-repeat',
                     'background_size':['cover', 'cover', 'cover', 'cover', 'cover'],
                     'background_position':['center', 'center', 'center', 'center', 'center'],
                     'background_repeat':['no-repeat', 'no-repeat', 'no-repeat', 'no-repeat', 'no-repeat'],

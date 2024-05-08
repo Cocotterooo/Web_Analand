@@ -47,6 +47,7 @@ class DiscordAPI:
                 self.online_members = preview['approximate_presence_count']
         except requests.exceptions.RequestException as e:
             print(f"Error fetching number of members: {e}")
+        #print(f"Total members: {self.total_members}, Online members: {self.online_members}")
         return {'total_members': self.total_members, 'online_members': self.online_members}
 
     def get_roles(self):
