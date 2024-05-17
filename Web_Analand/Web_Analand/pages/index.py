@@ -40,7 +40,8 @@ def index():
                     'width': '100%',
                     'height': '100%', 
                     'margin_bottom': f'{Size.MEDIUM.value}',
-                    'padding_bottom': '10px'
+                    'padding_bottom': '10px',
+                    'overflow': 'auto'
                 }
             ),
             width='100%'
